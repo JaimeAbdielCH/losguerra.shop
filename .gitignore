@@ -1,2 +1,3 @@
 admin/config.php
 config.php
+storage-out/cache/cache.*

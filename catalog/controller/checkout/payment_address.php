@@ -25,6 +25,22 @@ class ControllerCheckoutPaymentAddress extends Controller {
 			$data['zone_id'] = '';
 		}
 
+		if (isset($this->request->post['geo_zone_id'])) {
+			$data['geo_zone_id'] = (int)$this->request->post['geo_zone_id'];
+		}  elseif (!empty($address_info)) {
+			$data['geo_zone_id'] = $address_info['geo_zone_id'];
+		} else {
+			$data['geo_zone_id'] = '';
+		}
+
+		if (isset($this->request->post['ltnlng'])) {
+			$data['ltnlng'] = (int)$this->request->post['ltnlng'];
+		}  elseif (!empty($address_info)) {
+			$data['ltnlng'] = $address_info['ltnlng'];
+		} else {
+			$data['ltnlng'] = '';
+		}
+
 		$this->load->model('localisation/country');
 
 		$data['countries'] = $this->model_localisation_country->getCountries();
