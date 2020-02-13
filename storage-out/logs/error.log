@@ -1,0 +1,24 @@
+2019-12-29 5:07:49 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\losguerra\system\library\mail\mail.php on line 77
+2019-12-29 5:40:26 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\losguerra\system\library\mail\mail.php on line 77
+2019-12-29 5:40:27 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\losguerra\system\library\mail\mail.php on line 77
+2019-12-30 0:54:24 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\losguerra\system\library\mail\mail.php on line 77
+2019-12-30 0:54:25 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\losguerra\system\library\mail\mail.php on line 77
+2019-12-30 1:01:27 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\losguerra\system\library\mail\mail.php on line 75
+2019-12-30 1:01:28 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\losguerra\system\library\mail\mail.php on line 75
+2019-12-31 22:11:15 - PHP Notice:  Undefined variable: address_query in C:\xampp\htdocs\losguerra\catalog\model\account\address.php on line 120
+2019-12-31 22:11:15 - PHP Notice:  Trying to get property 'row' of non-object in C:\xampp\htdocs\losguerra\catalog\model\account\address.php on line 120
+2019-12-31 23:53:04 - PHP Notice:  Undefined variable: country_info in C:\xampp\htdocs\losguerra\catalog\controller\account\account.php on line 129
+2020-01-01 0:29:10 - PHP Notice:  Undefined variable: address_query in C:\xampp\htdocs\losguerra\catalog\model\account\address.php on line 121
+2020-01-01 0:29:10 - PHP Notice:  Trying to get property 'row' of non-object in C:\xampp\htdocs\losguerra\catalog\model\account\address.php on line 121
+2020-01-01 0:29:10 - PHP Notice:  Undefined variable: address_query in C:\xampp\htdocs\losguerra\catalog\model\account\address.php on line 146
+2020-01-01 0:29:10 - PHP Notice:  Trying to get property 'row' of non-object in C:\xampp\htdocs\losguerra\catalog\model\account\address.php on line 146
+2020-01-01 0:38:26 - PHP Notice:  Array to string conversion in C:\xampp\htdocs\losguerra\catalog\controller\account\address.php on line 439
+2020-01-01 0:38:39 - PHP Notice:  Array to string conversion in C:\xampp\htdocs\losguerra\catalog\controller\account\address.php on line 439
+2020-01-28 6:30:26 - PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo failed: Error no recuperable durante una b�squeda en base de datos.  in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 7
+2020-01-28 6:30:26 - PHP Warning:  mysqli::__construct(): (HY000/2002): php_network_getaddresses: getaddrinfo failed: Error no recuperable durante una b�squeda en base de datos.  in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 7
+2020-01-28 6:30:26 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 10
+2020-01-28 6:30:26 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 10
+2020-01-28 6:31:30 - PHP Warning:  mysqli::__construct(): (HY000/2002): Se produjo un error durante el intento de conexi�n ya que la parte conectada no respondi� adecuadamente tras un periodo de tiempo, o bien se produjo un error en la conexi�n establecida ya que el host conectado no ha podido responder.
+ in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 7
+2020-01-28 6:31:30 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 10
+2020-01-28 6:31:30 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 10
