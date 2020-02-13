@@ -446,7 +446,7 @@ $('select[name=\'zone_id\']').trigger('change');
 <script>
 var map;
 var ltnlng = $('#input-ltnlng').val().split(',');
-var panamaKml = "https://github.com/JaimeAbdielCH/losguerra/blob/master/Panama.kml?raw=true"
+var panamaKml = "https://losguerra.shop/Panama.kml?"
 var _ltn = ltnlng != "" ? parseFloat(ltnlng[0]) : 9.0026504;
 var _lng = ltnlng != "" ? parseFloat(ltnlng[1]) : -79.512029;
 var pos = {
@@ -497,8 +497,4 @@ $('#input-ltnlng').val(event.latLng.toUrlValue());
 });
 
 }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-rlB_t-LfEV7ytAfjvUJaZ8LvKqgPFPU&callback=initMap"
-async
-defer>
 </script>

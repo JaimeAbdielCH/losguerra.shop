@@ -22,3 +22,4 @@
  in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 7
 2020-01-28 6:31:30 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 10
 2020-01-28 6:31:30 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 10
+2020-02-13 5:18:29 - PHP Notice:  Undefined property: stdClass::$array_values in C:\xampp\htdocs\losguerra\catalog\model\extension\shipping\flat.php on line 9
