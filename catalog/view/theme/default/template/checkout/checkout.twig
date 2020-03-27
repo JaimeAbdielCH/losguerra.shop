@@ -228,7 +228,7 @@ $(document).delegate('#button-register', 'click', function() {
 
 				for (i in json['error']) {
 					var element = $('#input-payment-' + i.replace('_', '-'));
-
+                    console.log(element);
 					if ($(element).parent().hasClass('input-group')) {
 						$(element).parent().after('<div class="text-danger">' + json['error'][i] + '</div>');
 					} else {
@@ -811,8 +811,4 @@ $(document).delegate('#button-payment-method', 'click', function() {
     });
 });
 //--></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-rlB_t-LfEV7ytAfjvUJaZ8LvKqgPFPU&callback=initMap"
-async
-defer>
-</script>
 {{ footer }}

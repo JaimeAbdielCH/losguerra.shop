@@ -64,6 +64,8 @@ $_['entry_postcode']                 = 'Código Postal';
 $_['entry_city']                     = 'Ciudad';
 $_['entry_country']                  = 'País';
 $_['entry_zone']                     = 'Provincia/Estado';
+$_['entry_geo_zone']                 = 'Zona Geográfica';
+$_['entry_ltnlng']                   = 'Ubicación dentro del area sombreada';
 $_['entry_newsletter']               = 'Suscribirme al %s newsletter.';
 $_['entry_shipping']                 = 'Las Direcciones de Entrega y Facturación son la misma.';
 
@@ -84,6 +86,8 @@ $_['error_city']                     = 'La Ciudad debe contener entre 2 y 128 ca
 $_['error_postcode']                 = 'El Código Postal debe contener entre 2 y 10 caracteres.';
 $_['error_country']                  = 'Seleccionar País.';
 $_['error_zone']                     = 'Seleccionar Provincia/Estado.';
+$_['error_geo_zone']                 = 'Seleccionar Zona Geográfica';
+$_['error_ltnlng']                   = 'Debe seleccionar un punto dentro del area sombreada';
 $_['error_agree']                    = 'Error: Se debe Aceptar %s.';
 $_['error_address']                  = 'Error: Seleccionar Dirección.';
 $_['error_shipping']                 = 'Error: Método de Envío Obligatorio.';

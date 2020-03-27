@@ -2,16 +2,20 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 	color: #666;
-	font-size: 12px;
+	font-size: 15px;
 	line-height: 20px;
 	width: 100%;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #444;
 }
+#top > *, .font20 {
+	font-size: 20px !important;
+}
 /* default font size */
 .fa {
-	font-size: 14px;
+	font-size: 20px;
+	padding-right: 2px;
 }
 /* Override the bootstrap defaults */
 h1 {
@@ -148,7 +152,7 @@ div.required .control-label:before {
 #search .btn-lg {
 	font-size: 15px;
 	line-height: 18px;
-	padding: 10px 35px;
+	padding: 9px 35px;
 	background: #0f4c81;
 	color: #ffffff;
 	border-radius: 0px;
@@ -650,7 +654,6 @@ h2.price {
 .product-thumb .button-group button {
 	width: 60%;
 	border: none;
-	display: inline-block;
 	float: left;
 	background-color: #0f4c81;
     color: #fff;

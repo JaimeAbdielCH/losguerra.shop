@@ -1,4 +1,7 @@
 admin/config.php
 config.php
 storage-out/cache/cache.*
-catalog/view/theme/default/template/checkout/checkout.twig
+.htaccess
+catalog/model/tool/image.php
+storage-out/logs/error.log
+php.ini

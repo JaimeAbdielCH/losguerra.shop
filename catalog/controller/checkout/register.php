@@ -39,6 +39,19 @@ class ControllerCheckoutRegister extends Controller {
 			$data['zone_id'] = '';
 		}
 
+		
+		if (isset($this->session->data['shipping_address']['geo_zone_id'])) {
+			$data['geo_zone_id'] = $this->request->post['geo_zone_id'];
+		} else {
+			$data['geo_zone_id'] = '';
+		}
+
+		if (isset($this->session->data['shipping_address']['ltnlng'])) {
+			$data['ltnlng'] = $this->request->post['ltnlng'];
+		} else {
+			$data['ltnlng'] = '';
+		}
+
 		$this->load->model('localisation/country');
 
 		$data['countries'] = $this->model_localisation_country->getCountries();
@@ -153,6 +166,14 @@ class ControllerCheckoutRegister extends Controller {
 
 			if (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '' || !is_numeric($this->request->post['zone_id'])) {
 				$json['error']['zone'] = $this->language->get('error_zone');
+			}
+
+			if (!isset($this->request->post['geo_zone_id']) || $this->request->post['geo_zone_id'] == '' || !is_numeric($this->request->post['geo_zone_id'])) {
+				$json['error']['geo_zone'] = $this->language->get('error_geo_zone');
+			}
+
+			if (!isset($this->request->post['ltnlng']) || $this->request->post['ltnlng'] == '') {
+				$json['error']['ltnlng'] = $this->language->get('error_ltnlng');
 			}
 
 			if ((utf8_strlen(html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')) < 4) || (utf8_strlen(html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')) > 40)) {

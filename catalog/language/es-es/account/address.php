@@ -23,6 +23,7 @@ $_['entry_city']         = 'Ciudad';
 $_['entry_country']      = 'País';
 $_['entry_zone']         = 'Provincia/Estado';
 $_['entry_geo_zone']     = 'Zona Geográfica';
+$_['entry_ltnlng']       = 'Ubicación dentro del area sombreada';
 $_['entry_default']      = 'Dirección por Defecto';
 
 // Error
@@ -36,4 +37,5 @@ $_['error_city']         = 'La Ciudad debe contener entre 2 y 128 caracteres.';
 $_['error_country']      = 'Seleccionar País.';
 $_['error_zone']         = 'Seleccionar Provincia/Estado';
 $_['error_geo_zone']     = 'Seleccionar Zona Geográfica';
+$_['error_ltnlng']       = 'Debe seleccionar un punto dentro del area sombreada';
 $_['error_custom_field'] = '%s Obligatorio.';

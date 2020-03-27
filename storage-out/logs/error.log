@@ -23,3 +23,6 @@
 2020-01-28 6:31:30 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 10
 2020-01-28 6:31:30 - PHP Warning:  DB\MySQLi::__construct(): Couldn't fetch mysqli in C:\xampp\htdocs\losguerra\system\library\db\mysqli.php on line 10
 2020-02-13 5:18:29 - PHP Notice:  Undefined property: stdClass::$array_values in C:\xampp\htdocs\losguerra\catalog\model\extension\shipping\flat.php on line 9
+2020-03-19 21:45:21 - PHP Warning:  fsockopen(): unable to connect to :465 (No se puede establecer una conexi�n ya que el equipo de destino deneg� expresamente dicha conexi�n.
+) in C:\xampp\htdocs\losguerra\system\library\mail\smtp.php on line 87
+2020-03-19 21:58:26 - PHP Notice:  Undefined index: ltnlng in C:\xampp\htdocs\losguerra\catalog\model\account\address.php on line 4
