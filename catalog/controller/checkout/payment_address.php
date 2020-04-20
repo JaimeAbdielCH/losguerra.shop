@@ -63,7 +63,7 @@ class ControllerCheckoutPaymentAddress extends Controller {
 		} else {
 			$data['payment_address_custom_field'] = array();
 		}
-
+		$data['googleapikey'] = GOOGLEMAPAPIKEY;
 		$this->response->setOutput($this->load->view('checkout/payment_address', $data));
 	}
 

@@ -83,7 +83,7 @@ class ControllerCheckoutRegister extends Controller {
 		}
 
 		$data['shipping_required'] = $this->cart->hasShipping();
-		
+		$data['googleapikey'] = GOOGLEMAPAPIKEY;
 		$this->response->setOutput($this->load->view('checkout/register', $data));
 	}
 
