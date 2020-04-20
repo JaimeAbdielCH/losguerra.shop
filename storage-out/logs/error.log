@@ -26,3 +26,9 @@
 2020-03-19 21:45:21 - PHP Warning:  fsockopen(): unable to connect to :465 (No se puede establecer una conexi�n ya que el equipo de destino deneg� expresamente dicha conexi�n.
 ) in C:\xampp\htdocs\losguerra\system\library\mail\smtp.php on line 87
 2020-03-19 21:58:26 - PHP Notice:  Undefined index: ltnlng in C:\xampp\htdocs\losguerra\catalog\model\account\address.php on line 4
+2020-04-20 0:14:48 - PHP Warning:  fopen(c:/xampp/htdocs/losguerra/storage-out/cache/cache.catalog.language.1587345288): failed to open stream: Permission denied in C:\xampp\htdocs\losguerra\system\library\cache\file.php on line 49
+2020-04-20 0:14:48 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in C:\xampp\htdocs\losguerra\system\library\cache\file.php on line 51
+2020-04-20 0:14:48 - PHP Warning:  fwrite() expects parameter 1 to be resource, bool given in C:\xampp\htdocs\losguerra\system\library\cache\file.php on line 53
+2020-04-20 0:14:48 - PHP Warning:  fflush() expects parameter 1 to be resource, bool given in C:\xampp\htdocs\losguerra\system\library\cache\file.php on line 55
+2020-04-20 0:14:48 - PHP Warning:  flock() expects parameter 1 to be resource, bool given in C:\xampp\htdocs\losguerra\system\library\cache\file.php on line 57
+2020-04-20 0:14:48 - PHP Warning:  fclose() expects parameter 1 to be resource, bool given in C:\xampp\htdocs\losguerra\system\library\cache\file.php on line 59

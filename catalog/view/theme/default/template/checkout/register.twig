@@ -2,6 +2,7 @@
 	<div class="col-sm-6">
 		<fieldset id="account">
 			<legend>{{ text_your_details }}</legend>
+			<small>{{ text_why_your_details }}</small>
 			<div class="form-group" style="display: {% if customer_groups|length > 1 %} block {% else %} none {% endif %};">
 				<label class="control-label">{{ entry_customer_group }}</label>
 				{% for customer_group in customer_groups %}
@@ -176,6 +177,7 @@
 	<div class="col-sm-6">
 		<fieldset id="address">
 			<legend>{{ text_your_address }}</legend>
+			<small>{{ text_why_your_address }}</small>
 			<div class="form-group">
 				<label class="control-label" for="input-payment-company">{{ entry_company }}</label>
 				<input type="text" name="company" value="" placeholder="{{ entry_company }}" id="input-payment-company" class="form-control"/>
