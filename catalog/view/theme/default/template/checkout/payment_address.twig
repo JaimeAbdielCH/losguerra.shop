@@ -98,18 +98,18 @@
 			</div>
 		</div>
 		<div class="form-group required">
-			<label class="col-sm-2 control-label" for="input-geo_zone">{{ entry_geo_zone }}</label>
+			<label class="col-sm-2 control-label" for="input-payment-geo_zone">{{ entry_geo_zone }}</label>
 			<div class="col-sm-10">
-				<select name="geo_zone_id" id="input-geo_zone" class="form-control"></select>
+				<select name="geo_zone_id" id="input-payment-geo_zone" class="form-control"></select>
 				{% if error_zone %}
 					<div class="text-danger">{{ error_zone }}</div>
 				{% endif %}
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-2 control-label" for="input-ltnlng">{{ entry_ltnlng }}</label>
+			<label class="col-sm-2 control-label" for="input-payment-ltnlng">{{ entry_ltnlng }}</label>
 			<div class="col-sm-10">
-				<input type="hidden" name="ltnlng" value="{{ ltnlng }}" id="input-ltnlng" class="form-control"/>
+				<input type="hidden" name="ltnlng" value="{{ ltnlng }}" id="input-payment-ltnlng" class="form-control"/>
 				<div id="map" style="height: 300px"></div>
 			</div>
 		</div>
@@ -399,68 +399,58 @@ $('#collapse-payment-address select[name=\'country_id\']').trigger('change');
 <!--
 $('select[name=\'zone_id\']').change(function () {
 if (this.value) {
-$.ajax({
-url: 'index.php?route=account/account/zone&zone_id=' + this.value,
-dataType: 'json',
-beforeSend: function () {
-$('select[name=\'zone_id\']').prop('disabled', true);
-},
-complete: function () {
-$('select[name=\'zone_id\']').prop('disabled', false);
-},
-success: function (json) {
-html = '<option value="">  {{ text_select }}</option>';
+		$.ajax({
+		url: 'index.php?route=account/account/zone&zone_id=' + this.value,
+		dataType: 'json',
+		beforeSend: function () {
+		$('select[name=\'zone_id\']').prop('disabled', true);
+		},
+		complete: function () {
+		$('select[name=\'zone_id\']').prop('disabled', false);
+		},
+		success: function (json) {
+		html = '<option value="">  {{ text_select }}</option>';
 
-if (json['geo_zone'] && json['geo_zone'] != '') {
-for (i = 0; i < json['geo_zone'].length; i ++) {
-html += '<option value="' + json['geo_zone'][i]['geo_zone_id'] + '"';
+		if (json['geo_zone'] && json['geo_zone'] != '') {
+		for (i = 0; i < json['geo_zone'].length; i ++) {
+		html += '<option value="' + json['geo_zone'][i]['geo_zone_id'] + '"';
 
-if (json['geo_zone'][i]['geo_zone_id'] == '{{ geo_zone_id }}') {
-html += ' selected="selected"';
-}
+		if (json['geo_zone'][i]['geo_zone_id'] == '{{ geo_zone_id }}') {
+		html += ' selected="selected"';
+		}
 
-html += '>' + json['geo_zone'][i]['name'] + '</option>';
-}
+		html += '>' + json['geo_zone'][i]['name'] + '</option>';
+		}
+		} else {
+		html += '<option value="0" selected="selected">  {{ text_none }}</option>';
+		}
+
+		$('select[name=\'geo_zone_id\']').html(html);
+		},
+		error: function (xhr, ajaxOptions, thrownError) {
+		alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+		}
+		});
 } else {
-html += '<option value="0" selected="selected">  {{ text_none }}</option>';
-}
-
-$('select[name=\'geo_zone_id\']').html(html);
-},
-error: function (xhr, ajaxOptions, thrownError) {
-alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-}
-});
-} else {
-setTimeout(() => {
-$('select[name=\'zone_id\']').trigger('change');
-}, 500);
+		setTimeout(() => {
+		$('select[name=\'zone_id\']').trigger('change');
+		}, 500);
 }
 
 });
-
-$('select[name=\'zone_id\']').trigger('change');
 //
 	-->
 </script>
 <script>
 var map;
-var ltnlng = $('#input-ltnlng').val().split(',');
 var panamaKml = "https://losguerra.shop/Panama.kml"
-var _ltn = ltnlng != "" ? parseFloat(ltnlng[0]) : 9.0026504;
-var _lng = ltnlng != "" ? parseFloat(ltnlng[1]) : -79.512029;
+var _ltn = 9.0026504;
+var _lng = -79.512029;
 var pos = {
 lat: _ltn,
 lng: _lng
 };
-if (ltnlng == "") {
-zmm = 13
-if (navigator.geolocation) {
-navigator.geolocation.getCurrentPosition(showPosition);
-}
-} else {
-zmm = 18
-}
+zmm = 13;
 
 
 function showPosition(position) {
@@ -472,6 +462,10 @@ lng: position.coords.longitude
 }
 
 function initMap() {
+if (navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(showPosition);
+zmm = 18;
+}
 map = new google.maps.Map(document.getElementById('map'), {
 center: pos,
 sensor: true,
@@ -482,7 +476,7 @@ var marker = new google.maps.Marker({position: pos, map: map});
 
 map.addListener('click', function (e) {
 marker.setPosition(e.latLng.toJSON());
-$('#input-ltnlng').val(e.latLng.toUrlValue());
+$('#input-payment-ltnlng').val(e.latLng.toUrlValue());
 });
 
 var kmlLayer = new google.maps.KmlLayer(panamaKml, {
@@ -493,7 +487,7 @@ map: map
 
 kmlLayer.addListener('click', function (event) {
 marker.setPosition(event.latLng.toJSON());
-$('#input-ltnlng').val(event.latLng.toUrlValue());
+$('#input-payment-ltnlng').val(event.latLng.toUrlValue());
 });
 
 }

@@ -145,8 +145,10 @@ class ControllerCheckoutConfirm extends Controller {
 			$order_data['payment_postcode'] = $this->session->data['payment_address']['postcode'];
 			$order_data['payment_zone'] = $this->session->data['payment_address']['zone'];
 			$order_data['payment_zone_id'] = $this->session->data['payment_address']['zone_id'];
+			$order_data['payment_geo_zone_id'] = $this->session->data['payment_address']['geo_zone_id'];
 			$order_data['payment_country'] = $this->session->data['payment_address']['country'];
 			$order_data['payment_country_id'] = $this->session->data['payment_address']['country_id'];
+			$order_data['payment_ltnlng'] = $this->session->data['payment_address']['ltnlng'];
 			$order_data['payment_address_format'] = $this->session->data['payment_address']['address_format'];
 			$order_data['payment_custom_field'] = (isset($this->session->data['payment_address']['custom_field']) ? $this->session->data['payment_address']['custom_field'] : array());
 
@@ -172,6 +174,8 @@ class ControllerCheckoutConfirm extends Controller {
 				$order_data['shipping_postcode'] = $this->session->data['shipping_address']['postcode'];
 				$order_data['shipping_zone'] = $this->session->data['shipping_address']['zone'];
 				$order_data['shipping_zone_id'] = $this->session->data['shipping_address']['zone_id'];
+				$order_data['shipping_geo_zone_id'] = $this->session->data['shipping_address']['geo_zone_id'];
+				$order_data['shipping_ltnlng'] = $this->session->data['shipping_address']['ltnlng'];
 				$order_data['shipping_country'] = $this->session->data['shipping_address']['country'];
 				$order_data['shipping_country_id'] = $this->session->data['shipping_address']['country_id'];
 				$order_data['shipping_address_format'] = $this->session->data['shipping_address']['address_format'];

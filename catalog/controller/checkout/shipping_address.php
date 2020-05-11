@@ -31,6 +31,18 @@ class ControllerCheckoutShippingAddress extends Controller {
 			$data['zone_id'] = '';
 		}
 
+		if (isset($this->session->data['shipping_address']['geo_zone_id'])) {
+			$data['geo_zone_id'] = (int)$this->session->data['shipping_address']['geo_zone_id'];
+		} else {
+			$data['geo_zone_id'] = '';
+		}
+
+		if (isset($this->session->data['shipping_address']['ltnlng'])) {
+			$data['ltnlng'] = $this->session->data['shipping_address']['ltnlng'];
+		} else {
+			$data['ltnlng'] = '';
+		}
+
 		$this->load->model('localisation/country');
 
 		$data['countries'] = $this->model_localisation_country->getCountries();
@@ -54,6 +66,8 @@ class ControllerCheckoutShippingAddress extends Controller {
 			$data['shipping_address_custom_field'] = array();
 		}
 		
+		$data['googleapikey'] = GOOGLEMAPAPIKEY;
+
 		$this->response->setOutput($this->load->view('checkout/shipping_address', $data));
 	}
 
@@ -131,18 +145,26 @@ class ControllerCheckoutShippingAddress extends Controller {
 
 				$this->load->model('localisation/country');
 
-				$country_info = $this->model_localisation_country->getCountry($this->request->post['country_id']);
+				if ($this->request->post['country_id'] == '' && !isset(post['country_id'])) {
+					$json['error']['country'] = $this->language->get('error_country');
+				} else {
+					$country_info = $this->model_localisation_country->getCountry($this->request->post['country_id']);
+				}
+
+				
 
 				if ($country_info && $country_info['postcode_required'] && (utf8_strlen(trim($this->request->post['postcode'])) < 2 || utf8_strlen(trim($this->request->post['postcode'])) > 10)) {
 					$json['error']['postcode'] = $this->language->get('error_postcode');
 				}
 
-				if ($this->request->post['country_id'] == '') {
-					$json['error']['country'] = $this->language->get('error_country');
-				}
+				
 
 				if (!isset($this->request->post['zone_id']) || $this->request->post['zone_id'] == '' || !is_numeric($this->request->post['zone_id'])) {
 					$json['error']['zone'] = $this->language->get('error_zone');
+				}
+
+				if (!isset($this->request->post['geo_zone_id']) || $this->request->post['geo_zone_id'] == '' || !is_numeric($this->request->post['geo_zone_id'])) {
+					$json['error']['geo_zone'] = $this->language->get('error_geo_zone');
 				}
 
 				// Custom field validation
@@ -161,6 +183,7 @@ class ControllerCheckoutShippingAddress extends Controller {
 				}
 
 				if (!$json) {
+
 					$address_id = $this->model_account_address->addAddress($this->customer->getId(), $this->request->post);
 
 					$this->session->data['shipping_address'] = $this->model_account_address->getAddress($address_id);
