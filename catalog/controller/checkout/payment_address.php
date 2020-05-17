@@ -146,6 +146,14 @@ class ControllerCheckoutPaymentAddress extends Controller {
 					$json['error']['zone'] = $this->language->get('error_zone');
 				}
 
+				if (!isset($this->request->post['geo_zone_id']) || $this->request->post['geo_zone_id'] == '' || !is_numeric($this->request->post['geo_zone_id'])) {
+					$json['error']['geo_zone'] = $this->language->get('error_geo_zone');
+				}
+
+				if (!isset($this->request->post['ltnlng']) || $this->request->post['ltnlng'] == '' || !is_string($this->request->post['ltnlng'])) {
+					$json['error']['ltnlng'] = $this->language->get('error_ltnlng');
+				}
+
 				// Custom field validation
 				$this->load->model('account/custom_field');
 

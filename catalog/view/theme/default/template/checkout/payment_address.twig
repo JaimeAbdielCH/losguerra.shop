@@ -82,11 +82,7 @@
 				<select name="country_id" id="input-payment-country" class="form-control">
 					<option value="">{{ text_select }}</option>
 					{% for country in countries %}
-						{% if country.country_id == country_id %}
-							<option value="{{ country.country_id }}" selected="selected">{{ country.name }}</option>
-						{% else %}
 							<option value="{{ country.country_id }}">{{ country.name }}</option>
-						{% endif %}
 					{% endfor %}
 				</select>
 			</div>
@@ -94,15 +90,22 @@
 		<div class="form-group required">
 			<label class="col-sm-2 control-label" for="input-payment-zone">{{ entry_zone }}</label>
 			<div class="col-sm-10">
-				<select name="zone_id" id="input-payment-zone" class="form-control"></select>
+				<select name="zone_id" id="input-payment-zone" class="form-control">
+					<option value="">{{ text_none }}</option>
+				</select>
+				{% if error_zone %}
+					<div class="text-danger">{{ error_zone }}</div>
+				{% endif %}
 			</div>
 		</div>
 		<div class="form-group required">
-			<label class="col-sm-2 control-label" for="input-payment-geo_zone">{{ entry_geo_zone }}</label>
+			<label class="col-sm-2 control-label" for="input-payment-geo-zone">{{ entry_geo_zone }}</label>
 			<div class="col-sm-10">
-				<select name="geo_zone_id" id="input-payment-geo_zone" class="form-control"></select>
-				{% if error_zone %}
-					<div class="text-danger">{{ error_zone }}</div>
+				<select name="geo_zone_id" id="input-payment-geo-zone" class="form-control">
+					<option value="">{{ text_none }}</option>
+				</select>
+				{% if error_geo_zone %}
+					<div class="text-danger">{{ error_goe_zone }}</div>
 				{% endif %}
 			</div>
 		</div>
@@ -111,6 +114,9 @@
 			<div class="col-sm-10">
 				<input type="hidden" name="ltnlng" value="{{ ltnlng }}" id="input-payment-ltnlng" class="form-control"/>
 				<div id="map" style="height: 300px"></div>
+				{% if error_ltnlng %}
+					<div class="text-danger">{{ error_ltnlng }}</div>
+				{% endif %}
 			</div>
 		</div>
 		{% for custom_field in custom_fields %}
@@ -371,10 +377,6 @@ if (json['zone'] && json['zone'] != '') {
 for (i = 0; i < json['zone'].length; i ++) {
 html += '<option value="' + json['zone'][i]['zone_id'] + '"';
 
-if (json['zone'][i]['zone_id'] == '{{ zone_id }}') {
-html += ' selected="selected"';
-}
-
 html += '>' + json['zone'][i]['name'] + '</option>';
 }
 } else {
@@ -389,7 +391,7 @@ alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 });
 });
 
-$('#collapse-payment-address select[name=\'country_id\']').trigger('change');
+//$('#collapse-payment-address select[name=\'country_id\']').trigger('change');
 //
 	-->
 </script>

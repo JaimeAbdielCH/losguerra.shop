@@ -167,6 +167,10 @@ class ControllerCheckoutShippingAddress extends Controller {
 					$json['error']['geo_zone'] = $this->language->get('error_geo_zone');
 				}
 
+				if (!isset($this->request->post['ltnlng']) || $this->request->post['ltnlng'] == '' || !is_string($this->request->post['ltnlng'])) {
+					$json['error']['ltnlng'] = $this->language->get('error_ltnlng');
+				}
+
 				// Custom field validation
 				$this->load->model('account/custom_field');
 
