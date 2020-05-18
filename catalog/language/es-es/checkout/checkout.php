@@ -67,7 +67,7 @@ $_['entry_city']                     = 'Ciudad';
 $_['entry_country']                  = 'País';
 $_['entry_zone']                     = 'Provincia/Estado';
 $_['entry_geo_zone']                 = 'Zona Geográfica';
-$_['entry_ltnlng']                   = 'Ubicación dentro del area sombreada';
+$_['entry_ltnlng']                   = 'Ubicación exacta donde quiere que sea la entrega. Dentro del área sombreada.';
 $_['entry_newsletter']               = 'Suscribirme al %s newsletter.';
 $_['entry_shipping']                 = 'Las Direcciones de Entrega y Facturación son la misma.';
 
