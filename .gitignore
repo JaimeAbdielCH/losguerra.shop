@@ -1,7 +1,8 @@
 admin/config.php
 config.php
-storage-out/cache/cache.*
+storage-out/*
 .htaccess
 catalog/model/tool/image.php
 storage-out/logs/error.log
 php.ini
+image/*
