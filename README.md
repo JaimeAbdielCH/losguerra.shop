@@ -1,2 +1,2 @@
 # losguerra.shop
-# E-Commerce based on opencart with google map and Provider App
+# opencart E-commerce with google map
