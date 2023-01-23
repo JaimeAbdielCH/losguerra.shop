@@ -1,71 +1,53 @@
 <?php
-namespace Cache;
+namespace Opencart\System\Library\Cache;
 class File {
-	private $expire;
+	private int $expire;
 
-	public function __construct($expire = 3600) {
+	public function __construct(int $expire = 3600) {
 		$this->expire = $expire;
 
 		$files = glob(DIR_CACHE . 'cache.*');
 
 		if ($files) {
 			foreach ($files as $file) {
+				$filename = basename($file);
+
 				$time = substr(strrchr($file, '.'), 1);
 
 				if ($time < time()) {
-					if (file_exists($file)) {
-						unlink($file);
-					}
+					$this->delete(substr($filename, 6, strrpos($filename, '.') - 6));
 				}
 			}
 		}
 	}
 
-	public function get($key) {
-		$files = glob(DIR_CACHE . 'cache.' . preg_replace('/[^A-Z0-9\._-]/i', '', $key) . '.*');
+	public function get(string $key): array|string|null {
+		$files = glob(DIR_CACHE . 'cache.' . basename($key) . '.*');
 
 		if ($files) {
-			$handle = fopen($files[0], 'r');
-
-			flock($handle, LOCK_SH);
-
-			$data = fread($handle, filesize($files[0]));
-
-			flock($handle, LOCK_UN);
-
-			fclose($handle);
-
-			return json_decode($data, true);
+			return json_decode(file_get_contents($files[0]), true);
+		} else {
+			return [];
 		}
-
-		return false;
 	}
 
-	public function set($key, $value) {
+	public function set(string $key, array|string|null $value, int $expire = 0): void {
 		$this->delete($key);
 
-		$file = DIR_CACHE . 'cache.' . preg_replace('/[^A-Z0-9\._-]/i', '', $key) . '.' . (time() + $this->expire);
+		if (!$expire) {
+			$expire = $this->expire;
+		}
 
-		$handle = fopen($file, 'w');
-
-		flock($handle, LOCK_EX);
-
-		fwrite($handle, json_encode($value));
-
-		fflush($handle);
-
-		flock($handle, LOCK_UN);
-
-		fclose($handle);
+		file_put_contents(DIR_CACHE . 'cache.' . basename($key) . '.' . (time() + $expire), json_encode($value));
 	}
 
-	public function delete($key) {
-		$files = glob(DIR_CACHE . 'cache.' . preg_replace('/[^A-Z0-9\._-]/i', '', $key) . '.*');
+	public function delete(string $key): void {
+		$files = glob(DIR_CACHE . 'cache.' . basename($key) . '.*');
 
 		if ($files) {
 			foreach ($files as $file) {
-				if (file_exists($file)) {
-					unlink($file);
+				if (!@unlink($file)) {
+					clearstatcache(false, $file);
 				}
 			}
 		}
