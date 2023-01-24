@@ -1,11 +1,5 @@
 /lgshopapp/admin/config.php
 /lgshopapp/config.php
-/lgshopapp/storage-out/
-/lgshopapp/.htaccess
-/lgshopapp/catalog/model/tool/image.php
-/lgshopapp/storage-out/logs/error.log
-/lgshopapp/php.ini
-/lgshopapp/image/
 
 
 /lgshopapp/!index.html
