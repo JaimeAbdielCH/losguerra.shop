@@ -13,10 +13,9 @@
 /lgshopapp/download/
 /lgshopapp/image/data/
 /lgshopapp/image/cache/
-/lgshopapp/system/cache/
-/lgshopapp/system/logs/
 
-/lgshopapp/system/storage/
+/lgshopapp/system/cache/*
+/lgshopapp/system/logs/*
 
 # vQmod log files
 /lgshopapp/vqmod/logs/*
