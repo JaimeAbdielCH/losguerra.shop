@@ -69,7 +69,7 @@ class Shipping extends \Opencart\System\Engine\Controller {
 
 		$country_info = $this->model_localisation_country->getCountry((int)$this->request->post['country_id']);
 
-		if ($country_info && $country_info['postcode_required'] && (Helper\Utf8\strlen($this->request->post['postcode']) < 2 || Helper\Utf8\strlen($this->request->post['postcode']) > 10)) {
+		if ($country_info && $country_info['postcode_required'] && (oc_strlen($this->request->post['postcode']) < 2 || oc_strlen($this->request->post['postcode']) > 10)) {
 			$json['error']['postcode'] = $this->language->get('error_postcode');
 		}
 
@@ -164,6 +164,9 @@ class Shipping extends \Opencart\System\Engine\Controller {
 			$this->session->data['shipping_method'] = $this->request->post['shipping_method'];
 
 			$json['success'] = $this->language->get('text_success');
+
+			unset($this->session->data['payment_method']);
+			unset($this->session->data['payment_methods']);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

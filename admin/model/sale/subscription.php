@@ -1,12 +1,16 @@
 <?php
 namespace Opencart\Admin\Model\Sale;
 class Subscription extends \Opencart\System\Engine\Model {
-	public function editSubscription(int $subscription_id, int $data): void {
+	public function editSubscription(int $subscription_id, array $data): void {
 		$this->db->query("UPDATE `" . DB_PREFIX . "subscription` SET `subscription_plan_id` = '" . (int)$data['subscription_plan_id'] . "', `customer_payment_id` = '" . (int)$data['customer_payment_id'] . "' WHERE `subscription_id` = '" . (int)$subscription_id . "'");
 	}
 
-	public function editPaymentMethod(int $subscription_id, string $customer_payment_id): void {
+	public function editPaymentMethod(int $subscription_id, int $customer_payment_id): void {
 		$this->db->query("UPDATE `" . DB_PREFIX . "subscription` SET `customer_payment_id ` = '" . (int)$customer_payment_id . "' WHERE `subscription_id` = '" . (int)$subscription_id . "'");
+	}
+	
+	public function editSubscriptionPlan(int $subscription_id, int $subscription_plan_id): void {
+		$this->db->query("UPDATE `" . DB_PREFIX . "subscription` SET `subscription_plan_id` = '" . (int)$subscription_plan_id . "' WHERE `subscription_id` = '" . (int)$subscription_id . "'");
 	}
 
 	public function editRemaining(int $subscription_id, int $remaining): void {
@@ -23,6 +27,12 @@ class Subscription extends \Opencart\System\Engine\Model {
 
 	public function getSubscription(int $subscription_id): array {
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "subscription` WHERE `subscription_id` = '" . (int)$subscription_id . "'");
+
+		return $query->row;
+	}
+
+	public function getSubscriptionByOrderProductId(int $order_id, int $order_product_id): array {
+		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "subscription` WHERE `order_id` = '" . (int)$order_id . "' AND `order_product_id` = '" . (int)$order_product_id . "'");
 
 		return $query->row;
 	}
@@ -158,14 +168,22 @@ class Subscription extends \Opencart\System\Engine\Model {
 		return (int)$query->row['total'];
 	}
 
-	public function addTransaction(int $subscription_id, string $description = '', float $amount = 0): void {
-		$this->db->query("INSERT INTO `" . DB_PREFIX . "subscription_transaction` SET `subscription_id` = '" . (int)$subscription_id . "', `description` = '" . $this->db->escape($description) . "', `amount` = '" . (float)$amount . "', `date_added` = NOW()");
+	public function addTransaction(int $subscription_id, int $order_id, string $description, float $amount, int $type, string $payment_method, string $payment_code): void {
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "subscription_transaction` SET `subscription_id` = '" . (int)$subscription_id . "', `order_id` = '" . (int)$order_id . "', `description` = '" . $this->db->escape($description) . "', `amount` = '" . (float)$amount . "', `type` = '" . (int)$type . "', `payment_method` = '" . $this->db->escape($payment_method) . "', `payment_code` = '" . $this->db->escape($payment_code) . "', `date_added` = NOW()");
 	}
 
-	public function getTransactions(int $subscription_id): array {
+	public function getTransactions(int $subscription_id, int $start = 0, int $limit = 10): array {
+		if ($start < 0) {
+			$start = 0;
+		}
+
+		if ($limit < 1) {
+			$limit = 10;
+		}
+
 		$transaction_data = [];
 
-		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "subscription_transaction` WHERE `subscription_id` = '" . (int)$subscription_id . "' ORDER BY `date_added` DESC");
+		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "subscription_transaction` WHERE `subscription_id` = '" . (int)$subscription_id . "' ORDER BY `date_added` DESC LIMIT " . (int)$start . "," . (int)$limit);
 
 		foreach ($query->rows as $result) {
 			$transaction_data[] = [
@@ -178,6 +196,12 @@ class Subscription extends \Opencart\System\Engine\Model {
 
 		return $transaction_data;
 	}
+	
+	public function getTransactionTotal(int $subscription_id): float {
+        $query = $this->db->query("SELECT SUM(`amount`) AS `total` FROM `" . DB_PREFIX . "subscription_transaction` WHERE `subscription_id` = '" . (int)$subscription_id . "'");
+
+        return (float)$query->row['total'];
+    }
 
 	public function getTotalTransactions(int $subscription_id): int {
 		$query = $this->db->query("SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "subscription_transaction` WHERE `subscription_id` = '" . (int)$subscription_id . "'");

@@ -14,11 +14,15 @@ services:
       - 80:80
 
   db:
-    image: mariadb
+    image: mariadb:10.3
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: admin2023%
+      MARIADB_ROOT_PASSWORD: admin2023
       MARIADB_DATABASE: losguerradbone
+    volumes:
+      - ./losguerradb/create_db_user.sql:/docker-entrypoint-initdb.d/create_db_user.sql
+      - ./losguerradb/db:/var/lib/mysql
+      
 
   phpmyadmin:
     image: phpmyadmin

@@ -1,6 +1,5 @@
 <?php
 namespace Opencart\Catalog\Controller\Mail;
-use \Opencart\System\Helper as Helper;
 class Order extends \Opencart\System\Engine\Controller {
 	public function index(string &$route, array &$args): void {
 		if (isset($args[0])) {
@@ -31,12 +30,12 @@ class Order extends \Opencart\System\Engine\Controller {
 		$order_info = $this->model_checkout_order->getOrder($order_id);
 
 		if ($order_info) {
-			// If order status is 0 then becomes greater than 0 send main html email
+			// If the order status returns 0, then it becomes greater than 0. Therefore, we send the default html email
 			if (!$order_info['order_status_id'] && $order_status_id) {
 				$this->add($order_info, $order_status_id, $comment, $notify);
 			}
 
-			// If order status is not 0 then send update text email
+			// If the order status does not return 0, we send the update as a text email
 			if ($order_info['order_status_id'] && $order_status_id && $notify) {
 				$this->edit($order_info, $order_status_id, $comment, $notify);
 			}
@@ -58,6 +57,15 @@ class Order extends \Opencart\System\Engine\Controller {
 			}
 		}
 
+		$store_logo = html_entity_decode($this->config->get('config_logo'), ENT_QUOTES, 'UTF-8');
+		$store_name = html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8');
+
+		if (!defined('HTTP_CATALOG')) {
+			$store_url = HTTP_SERVER;
+		} else {
+			$store_url = HTTP_CATALOG;
+		}
+
 		$this->load->model('setting/store');
 
 		$store_info = $this->model_setting_store->getStore($order_info['store_id']);
@@ -68,10 +76,6 @@ class Order extends \Opencart\System\Engine\Controller {
 			$store_logo = html_entity_decode($this->model_setting_setting->getValue('config_logo', $store_info['store_id']), ENT_QUOTES, 'UTF-8');
 			$store_name = html_entity_decode($store_info['name'], ENT_QUOTES, 'UTF-8');
 			$store_url = $store_info['url'];
-		} else {
-			$store_logo = html_entity_decode($this->config->get('config_logo'), ENT_QUOTES, 'UTF-8');
-			$store_name = html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8');
-			$store_url = HTTP_SERVER;
 		}
 
 		$this->load->model('localisation/language');
@@ -85,8 +89,8 @@ class Order extends \Opencart\System\Engine\Controller {
 		}
 
 		// Load the language for any mails using a different country code and prefixing it so it does not pollute the main data pool.
-		$this->language->load($language_code, 'mail', $language_code);
-		$this->language->load('mail/order_add', 'mail', $language_code);
+		$this->load->language($language_code, 'mail', $language_code);
+		$this->load->language('mail/order_add', 'mail', $language_code);
 
 		// Add language vars to the template folder
 		$results = $this->language->all('mail');
@@ -113,7 +117,7 @@ class Order extends \Opencart\System\Engine\Controller {
 		$data['store_url'] = $order_info['store_url'];
 
 		$data['customer_id'] = $order_info['customer_id'];
-		$data['link'] = $order_info['store_url'] . 'index.php?route=account/order|info&order_id=' . $order_info['order_id'];
+		$data['link'] = $order_info['store_url'] . 'index.php?route=account/order.info&order_id=' . $order_info['order_id'];
 
 		if ($download_status) {
 			$data['download'] = $order_info['store_url'] . 'index.php?route=account/download';
@@ -143,6 +147,7 @@ class Order extends \Opencart\System\Engine\Controller {
 			$data['comment'] = '';
 		}
 
+		// Payment Address
 		if ($order_info['payment_address_format']) {
 			$format = $order_info['payment_address_format'];
 		} else {
@@ -177,6 +182,7 @@ class Order extends \Opencart\System\Engine\Controller {
 
 		$data['payment_address'] = str_replace(["\r\n", "\r", "\n"], '<br/>', preg_replace(["/\s\s+/", "/\r\r+/", "/\n\n+/"], '<br/>', trim(str_replace($find, $replace, $format))));
 
+		// Shipping Address
 		if ($order_info['shipping_address_format']) {
 			$format = $order_info['shipping_address_format'];
 		} else {
@@ -236,7 +242,7 @@ class Order extends \Opencart\System\Engine\Controller {
 
 				$option_data[] = [
 					'name'  => $order_option['name'],
-					'value' => (Helper\Utf8\strlen($value) > 20 ? Helper\Utf8\substr($value, 0, 20) . '..' : $value)
+					'value' => (oc_strlen($value) > 20 ? oc_substr($value, 0, 20) . '..' : $value)
 				];
 			}
 
@@ -283,14 +289,16 @@ class Order extends \Opencart\System\Engine\Controller {
 		}
 
 		if ($this->config->get('config_mail_engine')) {
-			$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'));
-			$mail->parameter = $this->config->get('config_mail_parameter');
-			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
-			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
-			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+			$mail_option = [
+				'parameter'     => $this->config->get('config_mail_parameter'),
+				'smtp_hostname' => $this->config->get('config_mail_smtp_hostname'),
+				'smtp_username' => $this->config->get('config_mail_smtp_username'),
+				'smtp_password' => html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8'),
+				'smtp_port'     => $this->config->get('config_mail_smtp_port'),
+				'smtp_timeout'  => $this->config->get('config_mail_smtp_timeout')
+			];
 
+			$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'), $mail_option);
 			$mail->setTo($order_info['email']);
 			$mail->setFrom($from);
 			$mail->setSender($store_name);
@@ -310,7 +318,7 @@ class Order extends \Opencart\System\Engine\Controller {
 			$store_url = $store_info['url'];
 		} else {
 			$store_name = html_entity_decode($this->config->get('config_name'), ENT_QUOTES, 'UTF-8');
-			$store_url = HTTP_SERVER;
+			$store_url = HTTP_CATALOG;
 		}
 
 		$this->load->model('localisation/language');
@@ -324,8 +332,8 @@ class Order extends \Opencart\System\Engine\Controller {
 		}
 
 		// Load the language for any mails using a different country code and prefixing it so it does not pollute the main data pool.
-		$this->language->load($language_code, 'mail', $language_code);
-		$this->language->load('mail/order_edit', 'mail', $language_code);
+		$this->load->language($language_code, 'mail', $language_code);
+		$this->load->language('mail/order_edit', 'mail', $language_code);
 
 		// Add language vars to the template folder
 		$results = $this->language->all('mail');
@@ -348,7 +356,7 @@ class Order extends \Opencart\System\Engine\Controller {
 		}
 
 		if ($order_info['customer_id']) {
-			$data['link'] = $order_info['store_url'] . 'index.php?route=account/order|info&order_id=' . $order_info['order_id'];
+			$data['link'] = $order_info['store_url'] . 'index.php?route=account/order.info&order_id=' . $order_info['order_id'];
 		} else {
 			$data['link'] = '';
 		}
@@ -367,14 +375,16 @@ class Order extends \Opencart\System\Engine\Controller {
 		}
 
 		if ($this->config->get('config_mail_engine')) {
-			$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'));
-			$mail->parameter = $this->config->get('config_mail_parameter');
-			$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-			$mail->smtp_username = $this->config->get('config_mail_smtp_username');
-			$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-			$mail->smtp_port = $this->config->get('config_mail_smtp_port');
-			$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+			$mail_option = [
+				'parameter'     => $this->config->get('config_mail_parameter'),
+				'smtp_hostname' => $this->config->get('config_mail_smtp_hostname'),
+				'smtp_username' => $this->config->get('config_mail_smtp_username'),
+				'smtp_password' => html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8'),
+				'smtp_port'     => $this->config->get('config_mail_smtp_port'),
+				'smtp_timeout'  => $this->config->get('config_mail_smtp_timeout')
+			];
 
+			$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'), $mail_option);
 			$mail->setTo($order_info['email']);
 			$mail->setFrom($from);
 			$mail->setSender($store_name);
@@ -454,7 +464,7 @@ class Order extends \Opencart\System\Engine\Controller {
 
 					$option_data[] = [
 						'name'  => $order_option['name'],
-						'value' => (Helper\Utf8\strlen($value) > 20 ? Helper\Utf8\substr($value, 0, 20) . '..' : $value)
+						'value' => (oc_strlen($value) > 20 ? oc_substr($value, 0, 20) . '..' : $value)
 					];
 				}
 
@@ -495,14 +505,16 @@ class Order extends \Opencart\System\Engine\Controller {
 			$data['store_url'] = $order_info['store_url'];
 
 			if ($this->config->get('config_mail_engine')) {
-				$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'));
-				$mail->parameter = $this->config->get('config_mail_parameter');
-				$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
-				$mail->smtp_username = $this->config->get('config_mail_smtp_username');
-				$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
-				$mail->smtp_port = $this->config->get('config_mail_smtp_port');
-				$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
+				$mail_option = [
+					'parameter'     => $this->config->get('config_mail_parameter'),
+					'smtp_hostname' => $this->config->get('config_mail_smtp_hostname'),
+					'smtp_username' => $this->config->get('config_mail_smtp_username'),
+					'smtp_password' => html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8'),
+					'smtp_port'     => $this->config->get('config_mail_smtp_port'),
+					'smtp_timeout'  => $this->config->get('config_mail_smtp_timeout')
+				];
 
+				$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'), $mail_option);
 				$mail->setTo($this->config->get('config_email'));
 				$mail->setFrom($this->config->get('config_email'));
 				$mail->setSender(html_entity_decode($order_info['store_name'], ENT_QUOTES, 'UTF-8'));

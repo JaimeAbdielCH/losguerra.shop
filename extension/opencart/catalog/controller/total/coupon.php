@@ -5,8 +5,8 @@ class Coupon extends \Opencart\System\Engine\Controller {
 		if ($this->config->get('total_coupon_status')) {
 			$this->load->language('extension/opencart/total/coupon');
 
-			$data['save'] = $this->url->link('extension/opencart/total/coupon|save', 'language=' . $this->config->get('config_language'), true);
-			$data['list'] = $this->url->link('checkout/cart|list', 'language=' . $this->config->get('config_language'), true);
+			$data['save'] = $this->url->link('extension/opencart/total/coupon.save', 'language=' . $this->config->get('config_language'), true);
+			$data['list'] = $this->url->link('checkout/cart.list', 'language=' . $this->config->get('config_language'), true);
 
 			if (isset($this->session->data['coupon'])) {
 				$data['coupon'] = $this->session->data['coupon'];
@@ -55,6 +55,11 @@ class Coupon extends \Opencart\System\Engine\Controller {
 
 				$json['success'] = $this->language->get('text_remove');
 			}
+
+			unset($this->session->data['shipping_method']);
+			unset($this->session->data['shipping_methods']);
+			unset($this->session->data['payment_method']);
+			unset($this->session->data['payment_methods']);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

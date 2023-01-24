@@ -1,6 +1,5 @@
 <?php
 namespace Opencart\Catalog\Controller\Api\Sale;
-use \Opencart\System\Helper as Helper;
 class Order extends \Opencart\System\Engine\Controller {
 	/*
 	 * Loads order info
@@ -39,7 +38,7 @@ class Order extends \Opencart\System\Engine\Controller {
 			];
 
 			// Payment Details
-			if ($this->config->get('config_checkout_address')) {
+			if ($this->config->get('config_checkout_payment_address')) {
 				$this->session->data['payment_address'] = [
 					'firstname'      => $order_info['payment_firstname'],
 					'lastname'       => $order_info['payment_lastname'],
@@ -110,7 +109,7 @@ class Order extends \Opencart\System\Engine\Controller {
 					} elseif ($option['type'] == 'select' || $option['type'] == 'radio') {
 						$option_data[$option['product_option_id']] = $option['product_option_value_id'];
 					} elseif ($option['type'] == 'checkbox') {
-						$option_data[$option['product_option_id']][] = $option['value'];
+						$option_data[$option['product_option_id']][] = $option['product_option_value_id'];
 					}
 				}
 
@@ -211,7 +210,7 @@ class Order extends \Opencart\System\Engine\Controller {
 		}
 
 		// Payment Address
-		if ($this->config->get('config_checkout_address') && !isset($this->session->data['payment_address'])) {
+		if ($this->config->get('config_checkout_payment_address') && !isset($this->session->data['payment_address'])) {
 			$json['error']['payment_address'] = $this->language->get('error_payment_address');
 		}
 
@@ -263,7 +262,7 @@ class Order extends \Opencart\System\Engine\Controller {
 			$order_data['custom_field'] = $this->session->data['customer']['custom_field'];
 
 			// Payment Details
-			if ($this->config->get('config_checkout_address')) {
+			if ($this->config->get('config_checkout_payment_address')) {
 				$order_data['payment_firstname'] = $this->session->data['payment_address']['firstname'];
 				$order_data['payment_lastname'] = $this->session->data['payment_address']['lastname'];
 				$order_data['payment_company'] = $this->session->data['payment_address']['company'];
@@ -387,7 +386,7 @@ class Order extends \Opencart\System\Engine\Controller {
 				foreach ($this->session->data['vouchers'] as $voucher) {
 					$order_data['vouchers'][] = [
 						'description'      => $voucher['description'],
-						'code'             => Helper\General\token(10),
+						'code'             => oc_token(10),
 						'to_name'          => $voucher['to_name'],
 						'to_email'         => $voucher['to_email'],
 						'from_name'        => $voucher['from_name'],

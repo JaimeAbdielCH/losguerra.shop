@@ -5,8 +5,9 @@ $_['heading_title']              = 'Subscriptions';
 // Text
 $_['text_success']               = 'Success: You have modified subscriptions!';
 $_['text_list']                  = 'Subscription List';
+$_['text_add']                   = 'Add Subscription';
+$_['text_edit']                  = 'Subscription (#%s)';
 $_['text_filter']                = 'Filter';
-$_['text_subscription']          = 'Subscription Details';
 $_['text_subscription_id']       = 'Subscription ID';
 $_['text_order_id']              = 'Order ID';
 $_['text_customer']              = 'Customer';
@@ -62,6 +63,10 @@ $_['entry_date_from']            = 'Date From';
 $_['entry_date_to']              = 'Date To';
 
 // Error
+$_['error_permission']           = 'Warning: You do not have permission to modify subscriptions!';
+$_['error_status']               = 'Error: The subscription status does not match with the store status!';
 $_['error_subscription']         = 'Warning: Subscription does not exist!';
 $_['error_subscription_plan']    = 'Warning: Subscription plan does not exist!';
+$_['error_subscription_status']  = 'Warning: Subscription status needs to be selected!';
 $_['error_payment_method']       = 'Warning: Payment method does not exist!';
+$_['error_service_type']		 = 'The service status has not been included with this transaction. If you see this error message, please contact your extension developer that handles the subscription services to resolve this issue!';
