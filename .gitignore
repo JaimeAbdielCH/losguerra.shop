@@ -1,26 +1,28 @@
-admin/config.php
-config.php
-storage-out/
-.htaccess
-catalog/model/tool/image.php
-storage-out/logs/error.log
-php.ini
-image/
+/lgshopapp/admin/config.php
+/lgshopapp/config.php
+/lgshopapp/storage-out/
+/lgshopapp/.htaccess
+/lgshopapp/catalog/model/tool/image.php
+/lgshopapp/storage-out/logs/error.log
+/lgshopapp/php.ini
+/lgshopapp/image/
 
 
-!index.html
+/lgshopapp/!index.html
 
-download/
-image/data/
-image/cache/
-system/cache/
-system/logs/
+/lgshopapp/download/
+/lgshopapp/image/data/
+/lgshopapp/image/cache/
+/lgshopapp/system/cache/
+/lgshopapp/system/logs/
 
-system/storage/
+/lgshopapp/system/storage/
 
 # vQmod log files
-vqmod/logs/*
+/lgshopapp/vqmod/logs/*
 # vQmod cache files
-vqmod/vqcache/*
-vqmod/checked.cache
-vqmod/mods.cache
+/lgshopapp/vqmod/vqcache/*
+/lgshopapp/vqmod/checked.cache
+/lgshopapp/vqmod/mods.cache
+
+/losguerradb/db/
