@@ -11,8 +11,7 @@
 /lgshopapp/!index.html
 
 /lgshopapp/download/
-/lgshopapp/image/data/
-/lgshopapp/image/cache/
+/lgshopapp/image/cache/*
 
 /lgshopapp/system/storage/cache/*
 
