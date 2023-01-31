@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir /lgshopapp
 RUN mkdir /storage-out
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf
-RUN chown -R www-data:www-data /lgshopapp
+RUN sudo chown -R www-data:www-data /lgshopapp
+RUN sudo chown -R www-data:www-data /storage-out
 RUN a2enmod rewrite
 WORKDIR /lgshopapp

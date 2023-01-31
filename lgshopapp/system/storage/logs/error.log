@@ -802,3 +802,1611 @@ Line: 200
 File: /lgshopapp/admin/controller/common/security.php
 Line: 200
 
+2023-01-27 14:05:05 - PHP Warning: mkdir(): Permission denied
+File: /lgshopapp/admin/controller/common/security.php
+Line: 182
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/composer.lock): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/backup/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.admin.language.1674831882): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.country.admin.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.information.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.length_class.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.order_status.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.return_status.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.store.1674831882): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.subscription_status.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.weight_class.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/cache.zone.222.1674831877): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/download/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/logs/error.log): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/logs/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/marketplace/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/marketplace/oc_language_example.ocmod.zip): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/marketplace/oc_payment_example.ocmod.zip): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/marketplace/oc_theme_example.ocmod.zip): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/marketplace/opencart.ocmod.zip): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/session/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/upload/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/autoload.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/bin/jp.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/bin/jp.php.bat): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/bin/pscss): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/bin/pscss.bat): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/ClassLoader.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/InstalledVersions.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/autoload_classmap.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/autoload_files.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/autoload_namespaces.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/autoload_psr4.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/autoload_real.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/autoload_static.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/installed.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/installed.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/composer/platform_check.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/00/0073e5e217538b37bd6c5e689495044c.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/18/18a96653f0e3b1b4a14dfb0be09c8495.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/1b/1bc145ed2632b92280ae9fd14a74fb8a.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/1d/1d73109c6a1538616895ea8a2f5508f6.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/22/22e8106f58ccb4631ca56e064b4fe1d1.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/26/26c2c883dbaaecb07d529db936eb9736.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/27/276551567253c72042d852bc8c9da666.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/2f/2fa3ab600ebabfe30874986f0dde8b0f.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/32/320f7e6ffcce6347b04c889222dc88d0.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/3e/3ef7f0c05f6a875ecf7ffb319563f7d2.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/3f/3fe0801c88573fab50335003a1999097.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/44/4444ee14ceda3828aa7134847df74432.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/57/57e2618da837b15aaebda3c0d5d98822.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/5f/5fe965cd93440436c06c31ad578cc1af.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/72/7248d6cb6575eea8e6b313ad0db59c91.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/78/78649b218147ce12053f5e03b43b2443.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/80/80f3ac4b163c31c11609b036ec965a2f.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/90/90d3526b59cc97b9dfb73669a8b56637.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/9a/9a98884d4542d152a91d8b75569180c5.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/a2/a2ed3803f2df9d32186d99b1e64d5741.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/a7/a78d83d2304c7321a78907ea5fdfdfc7.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/a7/a7de714f8d58127ccf24e19a2e946818.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/b6/b6356f2b7400e22de549b74c465b6fa0.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/c3/c3239fb0affeeee13fa4bac1e5e7eab3.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/d6/d60d0089a78f16dc0d0b6d1bdc5ccffe.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/d8/d82e53f41359171b791bab0733368ab8.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/d8/d86ad3982bdbff1d1ea1ecae7d05512c.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/f5/f51651593af49a152e0942ee79c86d11.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/f9/f91a0e185ecffc548ae40d85c9a266df.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/f9/f9a359f2c86fab0311220085d982030f.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/cache/template/fd/fddcf01dbb64b01c7c6d815d35457168.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/CODE_OF_CONDUCT.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/CONTRIBUTING.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/Makefile.frag): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/Makefile.frag.w32): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/NOTICE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:05 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/builder.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/config.m4): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/config.w32): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/format-check.sh): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/gen_api.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/gen_stub.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/package.xml-template_post): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/package.xml-template_pre): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/php-win.ini): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/php.ini): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/prepare_package_xml.sh): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/prepare_release.sh): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/run_tests): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/run_tests.bat): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/.clang-format): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/.clang-format-ignore): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/.gitignore): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-crt-php/.gitmodules): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-sdk-php/CODE_OF_CONDUCT.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-sdk-php/CRT_INSTRUCTIONS.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-sdk-php/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-sdk-php/NOTICE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-sdk-php/THIRD-PARTY-LICENSES): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/aws/aws-sdk-php/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/guzzle/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/guzzle/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/guzzle/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/guzzle/UPGRADING.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/guzzle/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/promises/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/promises/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/promises/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/promises/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/psr7/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/psr7/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/psr7/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/guzzlehttp/psr7/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/mtdowling/jmespath.php/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/mtdowling/jmespath.php/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/mtdowling/jmespath.php/README.rst): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/mtdowling/jmespath.php/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/psr/http-client/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/psr/http-client/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/psr/http-client/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/psr/http-client/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:06 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:06 - PHP Warning: copy(//storage/vendor/psr/http-factory/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): Permission denied
+File: /lgshopapp/admin/controller/common/security.php
+Line: 182
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/composer.lock): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/backup/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.admin.language.1674831882): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.country.admin.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.information.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.length_class.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.order_status.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.return_status.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.store.1674831922): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.subscription_status.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.weight_class.1.1674831876): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/cache.zone.222.1674831877): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/download/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/logs/error.log): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/logs/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/marketplace/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/marketplace/oc_language_example.ocmod.zip): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/marketplace/oc_payment_example.ocmod.zip): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/marketplace/oc_theme_example.ocmod.zip): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/marketplace/opencart.ocmod.zip): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/session/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/upload/index.html): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/autoload.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/bin/jp.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/bin/jp.php.bat): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/bin/pscss): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/bin/pscss.bat): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/ClassLoader.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/InstalledVersions.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/autoload_classmap.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/autoload_files.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/autoload_namespaces.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/autoload_psr4.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/autoload_real.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/autoload_static.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/installed.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/installed.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/vendor/composer/platform_check.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/00/0073e5e217538b37bd6c5e689495044c.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/18/18a96653f0e3b1b4a14dfb0be09c8495.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/1b/1bc145ed2632b92280ae9fd14a74fb8a.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/1d/1d73109c6a1538616895ea8a2f5508f6.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/22/22e8106f58ccb4631ca56e064b4fe1d1.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/26/26c2c883dbaaecb07d529db936eb9736.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/27/276551567253c72042d852bc8c9da666.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/2f/2fa3ab600ebabfe30874986f0dde8b0f.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/32/320f7e6ffcce6347b04c889222dc88d0.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/3e/3ef7f0c05f6a875ecf7ffb319563f7d2.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/3f/3fe0801c88573fab50335003a1999097.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/44/4444ee14ceda3828aa7134847df74432.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/57/57e2618da837b15aaebda3c0d5d98822.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/5f/5fe965cd93440436c06c31ad578cc1af.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/72/7248d6cb6575eea8e6b313ad0db59c91.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/78/78649b218147ce12053f5e03b43b2443.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/80/80f3ac4b163c31c11609b036ec965a2f.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/90/90d3526b59cc97b9dfb73669a8b56637.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/9a/9a98884d4542d152a91d8b75569180c5.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:43 - PHP Warning: copy(/storage/cache/template/a2/a2ed3803f2df9d32186d99b1e64d5741.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/a7/a78d83d2304c7321a78907ea5fdfdfc7.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/a7/a7de714f8d58127ccf24e19a2e946818.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/b6/b6356f2b7400e22de549b74c465b6fa0.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/c3/c3239fb0affeeee13fa4bac1e5e7eab3.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/d6/d60d0089a78f16dc0d0b6d1bdc5ccffe.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/d8/d82e53f41359171b791bab0733368ab8.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/d8/d86ad3982bdbff1d1ea1ecae7d05512c.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/f5/f51651593af49a152e0942ee79c86d11.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/f9/f91a0e185ecffc548ae40d85c9a266df.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/f9/f9a359f2c86fab0311220085d982030f.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/cache/template/fd/fddcf01dbb64b01c7c6d815d35457168.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/CODE_OF_CONDUCT.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/CONTRIBUTING.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/Makefile.frag): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/Makefile.frag.w32): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/NOTICE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/builder.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/config.m4): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/config.w32): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/format-check.sh): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/gen_api.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/gen_stub.php): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/package.xml-template_post): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/package.xml-template_pre): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/php-win.ini): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/php.ini): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/prepare_package_xml.sh): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/prepare_release.sh): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/run_tests): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/run_tests.bat): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/.clang-format): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/.clang-format-ignore): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/.gitignore): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-crt-php/.gitmodules): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-sdk-php/CODE_OF_CONDUCT.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-sdk-php/CRT_INSTRUCTIONS.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-sdk-php/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-sdk-php/NOTICE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-sdk-php/THIRD-PARTY-LICENSES): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/aws/aws-sdk-php/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/guzzle/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/guzzle/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/guzzle/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/guzzle/UPGRADING.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/guzzle/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/promises/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/promises/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/promises/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/promises/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/psr7/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/psr7/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/psr7/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/guzzlehttp/psr7/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/mtdowling/jmespath.php/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/mtdowling/jmespath.php/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/mtdowling/jmespath.php/README.rst): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/mtdowling/jmespath.php/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/psr/http-client/CHANGELOG.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/psr/http-client/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/psr/http-client/README.md): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/psr/http-client/composer.json): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
+2023-01-27 14:05:44 - PHP Warning: mkdir(): No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 196
+
+2023-01-27 14:05:44 - PHP Warning: copy(/storage/vendor/psr/http-factory/LICENSE): Failed to open stream: No such file or directory
+File: /lgshopapp/admin/controller/common/security.php
+Line: 200
+
