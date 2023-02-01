@@ -54,10 +54,6 @@ class Subscription extends \Opencart\System\Engine\Model {
 			$implode[] = "`s`.`order_product_id` = '" . (int)$data['filter_order_product_id'] . "'";
 		}
 
-		if (!empty($data['filter_reference'])) {
-			$implode[] = "`s`.`reference` LIKE '" . $this->db->escape((string)$data['filter_reference'] . '%') . "'";
-		}
-
 		if (!empty($data['filter_customer'])) {
 			$implode[] = "CONCAT(o.`firstname`, ' ', o.`lastname`) LIKE '" . $this->db->escape((string)$data['filter_customer'] . '%') . "'";
 		}
@@ -133,10 +129,6 @@ class Subscription extends \Opencart\System\Engine\Model {
 			$implode[] .= "`s`.`order_id` = '" . (int)$data['filter_order_id'] . "'";
 		}
 
-		if (!empty($data['filter_reference'])) {
-			$implode[] .= "`s`.`reference` LIKE '" . $this->db->escape((string)$data['filter_reference'] . '%') . "'";
-		}
-
 		if (!empty($data['filter_customer'])) {
 			$implode[] .= "CONCAT(o.`firstname`, ' ', o.`lastname`) LIKE '" . $this->db->escape((string)$data['filter_customer'] . '%') . "'";
 		}
@@ -158,6 +150,12 @@ class Subscription extends \Opencart\System\Engine\Model {
 		}
 
 		$query = $this->db->query($sql);
+
+		return (int)$query->row['total'];
+	}
+
+	public function getTotalSubscriptionsByStoreId(int $store_id): int {
+		$query = $this->db->query("SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "subscription` WHERE `store_id` = '" . (int)$store_id . "'");
 
 		return (int)$query->row['total'];
 	}

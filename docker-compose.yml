@@ -21,7 +21,6 @@ services:
       MARIADB_DATABASE: losguerradbone
     volumes:
       - ./losguerradb/create_db_user.sql:/docker-entrypoint-initdb.d/create_db_user.sql
-      - ./losguerradb/initdb.sql:/docker-entrypoint-initdb.d/initdb.sql
       - ./losguerradb/db:/var/lib/mysql
       
 
