@@ -40,7 +40,7 @@ class Header extends \Opencart\System\Engine\Controller {
 		$data['name'] = $this->config->get('config_name');
 
 		if (is_file(DIR_IMAGE . $this->config->get('config_logo'))) {
-			$data['logo'] = $this->config->get('config_url') . 'image/' . 'catalog/lgshoplogo.png'; //$this->config->get('config_logo');
+			$data['logo'] = $this->config->get('config_url') . 'image/' . $this->config->get('config_logo');
 		} else {
 			$data['logo'] = '';
 		}
