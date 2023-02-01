@@ -118,7 +118,7 @@ class Security extends \Opencart\System\Engine\Controller {
 		}
 
 		if (isset($this->request->get['name'])) {
-			$name = preg_replace('[^a-zA-z0-9_]', '', basename(html_entity_decode(trim($this->request->get['name']), ENT_QUOTES, 'UTF-8')));
+			$name = $this->request->get['name']; //preg_replace('[^a-zA-z0-9_\:\/]', '', basename(html_entity_decode(trim($this->request->get['name']), ENT_QUOTES, 'UTF-8')));
 		} else {
 			$name = '';
 		}
@@ -134,7 +134,6 @@ class Security extends \Opencart\System\Engine\Controller {
 		if ($this->user->hasPermission('modify', 'common/security')) {
 			$base_old = DIR_STORAGE;
 			$base_new = $path . $name . '/';
-
 			if (!is_dir($base_old)) {
 				$json['error'] = $this->language->get('error_storage');
 			}
@@ -197,7 +196,9 @@ class Security extends \Opencart\System\Engine\Controller {
 				}
 
 				if (is_file($base_old . $destination) && !is_file($base_new . $destination)) {
-					copy($base_old . $destination, $base_new . $destination);
+					$old_dest = $base_old . $destination;
+					$new_dest = $base_new . $destination;
+					copy($old_dest, $new_dest);
 				}
 			}
 
