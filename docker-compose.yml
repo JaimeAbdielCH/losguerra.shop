@@ -10,6 +10,7 @@ services:
     image: lgshopapp
     volumes:
       - ./lgshopapp:/lgshopapp
+      - ./storageout:/storageout
     ports:
       - 80:80
 

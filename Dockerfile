@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-install pdo pdo_mysql
 RUN mkdir /lgshopapp && mkdir /storageout
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf
-RUN chown -R www-data:www-data /lgshopapp  \
-     && chown -R www-data:www-data /storageout \
+RUN chown -R www-data:www-data /lgshopapp/  \
+     && chown -R www-data:www-data /storageout/ \
      && chmod 777 /storageout
+RUN touch /lgshopapp/config.php
 RUN a2enmod rewrite
