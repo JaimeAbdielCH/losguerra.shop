@@ -1,25 +1,25 @@
-/lgshopapp/admin/config.php
-/lgshopapp/config.php
+/opencartapp/admin/config.php
+/opencartapp/config.php
 
 
-/lgshopapp/!index.html
+/opencartapp/!index.html
 
-/lgshopapp/download/
+/opencartapp/download/
 
-/lgshopapp/system/storage/cache/*
+/opencartapp/system/storage/cache/*
 storageout/store/cache/*
 storageout/store/cache/template/*
 
 # vQmod log files
-/lgshopapp/vqmod/logs/*
+/opencartapp/vqmod/logs/*
 # vQmod cache files
-/lgshopapp/vqmod/vqcache/*
-/lgshopapp/vqmod/checked.cache
-/lgshopapp/vqmod/mods.cache
+/opencartapp/vqmod/vqcache/*
+/opencartapp/vqmod/checked.cache
+/opencartapp/vqmod/mods.cache
 
-losguerradb/db/
+opencartdb/db/
 
-/lgshopapp/system/storage/logs/error.log
-lgshopapp/system/storage/logs/error.log
-lgshopapp/gerencia/config.php
-/lgshopapp/image/cache/*
+/opencartapp/system/storage/logs/error.log
+opencartapp/system/storage/logs/error.log
+opencartapp/gerencia/config.php
+/opencartapp/image/cache/*

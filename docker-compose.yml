@@ -23,3 +23,10 @@ services:
     volumes:
       - ./opencartdb/create_db_user.sql:/docker-entrypoint-initdb.d/create_db_user.sql
       - ./opencartdb/db:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
