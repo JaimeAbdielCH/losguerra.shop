@@ -118,7 +118,7 @@ class Security extends \Opencart\System\Engine\Controller {
 		}
 
 		if (isset($this->request->get['name'])) {
-			$name = preg_replace('[^a-zA-z0-9_]', '', basename(html_entity_decode(trim($this->request->get['name']), ENT_QUOTES, 'UTF-8')));
+			$name = $this->request->get['name']; //$name = preg_replace('[^a-zA-z0-9_]', '', basename(html_entity_decode(trim($this->request->get['name']), ENT_QUOTES, 'UTF-8')));
 		} else {
 			$name = '';
 		}
