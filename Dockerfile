@@ -1,4 +1,4 @@
-FROM php:7.4-apache-bullseye
+FROM php:8.2.3-apache-bullseye
 RUN apt-get update && apt-get install -y \
         libzip-dev \
         zlib1g-dev \
