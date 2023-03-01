@@ -3,10 +3,10 @@
 $_['heading_title']     = 'Grupo de Atributos';
 
 // Text
-$_['text_success']      = 'Success: You have modified attribute groups!';
-$_['text_list']         = 'Attribute Group List';
-$_['text_add']          = 'Add Attribute Group';
-$_['text_edit']         = 'Edit Attribute Group';
+$_['text_success']      = '¡Has modificado el grupo de atributos!';
+$_['text_list']         = 'Lista de Grupo de Atributos';
+$_['text_add']          = 'Agregar Grupo de Atributos';
+$_['text_edit']         = 'Editar Grupo de Atributos';
 
 // Column
 $_['column_name']       = 'Attribute Group Name';
