@@ -23,3 +23,7 @@ opencartdb/db/
 opencartapp/system/storage/logs/error.log
 opencartapp/gerencia/config.php
 /opencartapp/image/cache/*
+/.vs/*
+/.vscode/*
+.vs/ProjectSettings.json
+.gitignore
