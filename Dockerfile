@@ -9,10 +9,17 @@ RUN apt-get update && apt-get install -y \
 	&& docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-install zip \
 	&& docker-php-ext-install pdo pdo_mysql
+RUN a2enmod ssl \
+    && a2enmod headers \
+    && a2enmod rewrite \
+    && a2enmod proxy_fcgi \
+    && a2enmod http2 \
+    && a2enmod proxy \
+    && a2enmod proxy_http \
+    && c_rehash /etc/ssl/certs/
 RUN mkdir /opencartapp && mkdir /storageout
 COPY vhost.conf /etc/apache2/sites-available/000-default.conf
 RUN chown -R www-data:www-data /opencartapp/  \
      && chown -R www-data:www-data /storageout/ \
      && chmod 777 /storageout
 RUN touch /opencartapp/config.php
-RUN a2enmod rewrite
