@@ -24,11 +24,9 @@ RUN apt-get update && apt-get install -y \
     acl \
     && echo 'alias sf="php bin/console"' >> ~/.bashrc \
 	&& docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
-	&& docker-php-ext-install -j$(nproc) gd \
-    && docker-php-ext-install zip \
-	&& docker-php-ext-install pdo pdo_mysql 
+	&& docker-php-ext-install -j$(nproc) gd
 RUN docker-php-ext-install \
-    pdo pdo_mysql zip xsl gd intl opcache exif mbstring
+    pdo pdo_mysql zip xsl intl opcache exif mbstring
 RUN ln -snf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime && echo ${TIMEZONE} > /etc/timezone \
     && printf '[PHP]\ndate.timezone = "%s"\n', ${TIMEZONE} > /usr/local/etc/php/conf.d/tzone.ini \
     && "date"
