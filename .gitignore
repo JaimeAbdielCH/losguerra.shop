@@ -1,3 +1,17 @@
+.vs/*
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
 /opencartapp/admin/config.php
 /opencartapp/config.php
 
@@ -23,8 +37,3 @@ opencartdb/db/
 opencartapp/system/storage/logs/error.log
 opencartapp/gerencia/config.php
 /opencartapp/image/cache/*
-.vs
-.vs/*
-./.vs/*
-.vscode
-.vscode/*
