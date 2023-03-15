@@ -1,4 +1,3 @@
-# Use root/example as user/password credentials
 version: '3.1'
 
 services:
@@ -11,9 +10,10 @@ services:
     volumes:
       - ./opencartapp:/opencartapp
       - ./storageout:/storageout
+      - ./conf:/conf
     ports:
       - 80:80
-
+      - 443:443
   db:
     image: mariadb:10.3
     restart: always
