@@ -27,4 +27,5 @@ opencartapp/gerencia/config.php
 /.vscode/*
 .vs/ProjectSettings.json
 .gitignore
-.vs
+.vs/*
+.vscode/*
