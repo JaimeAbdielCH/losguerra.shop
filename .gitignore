@@ -12,9 +12,6 @@
 # Built Visual Studio Code Extensions
 *.vsix
 
-/opencartapp/admin/config.php
-/opencartapp/config.php
-
 
 /opencartapp/!index.html
 

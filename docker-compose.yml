@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args: 
-            TIMEZONE: ${TIMEZONE}
+            TIMEZONE: America/Panama
     image: opencartapp
     volumes:
       - ./opencartapp:/opencartapp

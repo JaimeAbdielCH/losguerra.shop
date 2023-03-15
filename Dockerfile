@@ -45,5 +45,4 @@ COPY vhost.conf /etc/apache2/sites-available/000-default.conf
 RUN chown -R www-data:www-data /opencartapp/  \
      && chown -R www-data:www-data /storageout/ \
      && chmod 777 /storageout
-RUN touch /opencartapp/config.php
 
