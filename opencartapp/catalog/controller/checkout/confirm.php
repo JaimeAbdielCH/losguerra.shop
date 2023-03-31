@@ -88,8 +88,9 @@ class Confirm extends \Opencart\System\Engine\Controller {
 		if ($status) {
 			$order_data = [];
 
-			// Store Details
 			$order_data['invoice_prefix'] = $this->config->get('config_invoice_prefix');
+
+			// Store Details
 			$order_data['store_id'] = $this->config->get('config_store_id');
 			$order_data['store_name'] = $this->config->get('config_name');
 			$order_data['store_url'] = $this->config->get('config_url');
@@ -416,6 +417,7 @@ class Confirm extends \Opencart\System\Engine\Controller {
 			$data['payment'] = '';
 		}
 
+		// Validate if payment method has been set.
 		return $this->load->view('checkout/confirm', $data);
 	}
 

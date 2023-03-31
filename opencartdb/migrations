@@ -1,0 +1,73 @@
+CREATE TABLE `oc_subscription` (
+  `subscription_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `order_product_id` int(11) NOT NULL,
+  `store_id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `customer_group_id` int(11) NOT NULL,
+  `payment_address_id` int(11) NOT NULL,
+  `payment_method` varchar(128) NOT NULL,
+  `payment_code` varchar(128) NOT NULL,
+  `shipping_address_id` int(11) NOT NULL,
+  `shipping_method` varchar(128) NOT NULL,
+  `shipping_code` varchar(128) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(4) NOT NULL,
+  `subscription_plan_id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `trial_price` decimal(10,4) NOT NULL,
+  `trial_frequency` enum('day','week','semi_month','month','year') NOT NULL,
+  `trial_cycle` smallint(6) NOT NULL,
+  `trial_duration` smallint(6) NOT NULL,
+  `trial_remaining` smallint(6) NOT NULL,
+  `trial_status` tinyint(1) NOT NULL,
+  `price` decimal(10,4) NOT NULL,
+  `frequency` enum('day','week','semi_month','month','year') NOT NULL,
+  `cycle` smallint(6) NOT NULL,
+  `duration` smallint(6) NOT NULL,
+  `remaining` smallint(6) NOT NULL,
+  `date_next` datetime NOT NULL,
+  `comment` text NOT NULL,
+  `subscription_status_id` int(11) NOT NULL,
+  `affiliate_id` int(11) NOT NULL,
+  `commission` decimal(10,4) NOT NULL,
+  `marketing_id` int(11) NOT NULL,
+  `tracking` varchar(64) NOT NULL,
+  `language_id` int(11) NOT NULL,
+  `currency_id` int(11) NOT NULL,
+  `ip` varchar(40) NOT NULL,
+  `forwarded_ip` varchar(40) NOT NULL,
+  `user_agent` varchar(255) NOT NULL,
+  `accept_language` varchar(255) NOT NULL,
+  `date_added` datetime NOT NULL,
+  `date_modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+CREATE TABLE `oc_subscription_history` (
+  `subscription_history_id` int(11) NOT NULL,
+  `subscription_id` int(11) NOT NULL,
+  `subscription_status_id` int(11) NOT NULL,
+  `notify` tinyint(1) NOT NULL DEFAULT 0,
+  `comment` text NOT NULL,
+  `date_added` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `oc_subscription`
+  ADD PRIMARY KEY (`subscription_id`),
+  ADD KEY `order_id` (`order_id`);
+
+--
+-- Indexes for table `oc_subscription_history`
+--
+ALTER TABLE `oc_subscription_history`
+  ADD PRIMARY KEY (`subscription_history_id`);
+
+ALTER TABLE `oc_subscription`
+  MODIFY `subscription_id` int(11) NOT NULL AUTO_INCREMENT;
+
+ALTER TABLE `oc_subscription_history`
+  MODIFY `subscription_history_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `oc_order` ADD `payment_address_id` INT NOT NULL AFTER `date_modified`, ADD `shipping_address_id` INT NOT NULL AFTER `payment_address_id`;
+ALTER TABLE `oc_order_subscription`
+  DROP `remaining`,
+  DROP `subscription_status_id`,
+  DROP `date_next`;

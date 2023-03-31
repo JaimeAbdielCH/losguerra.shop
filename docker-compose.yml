@@ -25,6 +25,8 @@ services:
     volumes:
       - ./opencartdb/create_db_user.sql:/docker-entrypoint-initdb.d/create_db_user.sql
       - ./opencartdb/db:/var/lib/mysql
+    ports:
+      - 3306:3306
   phpmyadmin:
     image: phpmyadmin
     restart: always
