@@ -10,7 +10,7 @@
 /opencartapp/system/storage/cache/*
 storageout/store/cache/*
 storageout/store/cache/template/*
-
+storageout/store/session/*
 # vQmod log files
 /opencartapp/vqmod/logs/*
 # vQmod cache files
