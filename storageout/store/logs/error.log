@@ -15,3 +15,16 @@ Line: 72
 File: /opencartapp/system/library/db/pdo.php
 Line: 72
 
+2023-04-03 13:32:07 - PHP Unknown: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated
+File: /opencartapp/extension/opencart/admin/controller/dashboard/map.php
+Line: 84
+
+2023-04-03 13:46:52 - ParseError:  syntax error, unexpected token "echo" in /opencartapp/extension/opencart/catalog/model/shipping/flat.php on line 7
+2023-04-03 13:53:35 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 99
+2023-04-03 13:53:35 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 99
+2023-04-03 13:53:58 - PHP Warning:  Undefined array key 0 in /opencartapp/system/library/cart/tax.php on line 99
+2023-04-03 13:53:58 - PHP Warning:  Undefined array key 0 in /opencartapp/system/library/cart/tax.php on line 99
+2023-04-03 13:58:17 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 163
+2023-04-03 13:58:17 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 99
+2023-04-03 13:58:17 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 163
+2023-04-03 13:58:17 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 99

@@ -1,7 +1,8 @@
 /opencartapp/admin/config.php
 /opencartapp/config.php
 /opencartapp/image/catalog/
-
+/storageout/store/session/*
+/storageout/store/logs/*
 /opencartapp/!index.html
 
 /opencartapp/download/
