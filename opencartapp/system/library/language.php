@@ -44,6 +44,15 @@ class Language {
 		}
 	}
 
+	public function addAdminPath(string $code='', string $directory=''): void {
+			if ($code) {
+				$this->code = $code;
+			}
+		if ($directory) {
+				$this->directory = $directory;
+			}
+	}
+
 	/**
      * Get language text string
      *
