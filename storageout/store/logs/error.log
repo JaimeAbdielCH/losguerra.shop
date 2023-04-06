@@ -54,3 +54,15 @@ Line: 84
 File: /opencartapp/extension/opencart/admin/controller/dashboard/map.php
 Line: 84
 
+2023-04-05 23:19:48 - PHP Unknown: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated
+File: /opencartapp/extension/opencart/admin/controller/dashboard/map.php
+Line: 84
+
+2023-04-05 23:20:22 - PHP Unknown: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated
+File: /opencartapp/extension/opencart/admin/controller/dashboard/map.php
+Line: 84
+
+2023-04-05 23:20:32 - PHP Unknown: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated
+File: /opencartapp/extension/opencart/admin/controller/dashboard/map.php
+Line: 84
+
