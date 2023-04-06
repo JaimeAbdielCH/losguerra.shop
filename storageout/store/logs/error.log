@@ -28,3 +28,29 @@ Line: 84
 2023-04-03 13:58:17 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 99
 2023-04-03 13:58:17 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 163
 2023-04-03 13:58:17 - PHP Warning:  Array to string conversion in /opencartapp/system/library/cart/tax.php on line 99
+2023-04-05 03:18:37 - TypeError:  Opencart\Catalog\Model\Catalog\Information::getLayoutId(): Argument #1 ($information_id) must be of type int, string given in /opencartapp/catalog/model/catalog/information.php on line 16
+2023-04-05 03:18:37 - TypeError:  Opencart\Catalog\Model\Catalog\Information::getLayoutId(): Argument #1 ($information_id) must be of type int, string given in /opencartapp/catalog/model/catalog/information.php on line 16
+2023-04-05 19:20:10 - PHP Unknown: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated
+File: /opencartapp/extension/opencart/admin/controller/dashboard/map.php
+Line: 84
+
+2023-04-05 19:27:32 - PHP Warning: Undefined array key "cod.cod"
+File: /opencartapp/catalog/controller/api/sale/order.php
+Line: 301
+
+2023-04-05 19:27:32 - PHP Warning: Trying to access array offset on value of type null
+File: /opencartapp/catalog/controller/api/sale/order.php
+Line: 303
+
+2023-04-05 19:27:32 - PHP Warning: Trying to access array offset on value of type null
+File: /opencartapp/catalog/controller/api/sale/order.php
+Line: 304
+
+2023-04-05 22:54:36 - PHP Unknown: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated
+File: /opencartapp/extension/opencart/admin/controller/dashboard/map.php
+Line: 84
+
+2023-04-05 23:01:27 - PHP Unknown: strtolower(): Passing null to parameter #1 ($string) of type string is deprecated
+File: /opencartapp/extension/opencart/admin/controller/dashboard/map.php
+Line: 84
+

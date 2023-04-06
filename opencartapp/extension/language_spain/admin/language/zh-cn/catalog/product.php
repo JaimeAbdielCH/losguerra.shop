@@ -1,0 +1,133 @@
+<?php
+// 标题
+$_['heading_title'] = '产品';
+
+// 文本
+$_['text_success'] = '成功：您已修改产品！';
+$_['text_variant'] = '因为这是变体产品，您必须覆盖<a href="%s" target="_blank" class="alert-link">主产品</a>数据。 否则，数据将在保存时替换为<a href="%s" target="_blank" class="alert-link">主产品</a>数据。';
+$_['text_list'] = '产品列表';
+$_['text_add'] = '创建新产品';
+$_['text_edit'] = '编辑产品';
+$_['text_variant_add'] = '创建产品变体';
+$_['text_model'] = '产品编号';
+$_['text_price'] = '价格';
+$_['text_stock'] = '股票';
+$_['text_specification'] = '规格';
+$_['text_filter'] = '过滤器';
+$_['text_default'] = '默认';
+$_['text_keyword'] = '<b style="color:tomato;">不要使用空格、特殊字符（&%$ 等）或变音符号！</b><br />不要使用空格 - (减号) 或 _（下划线），输入变音符号，如 <u>ä</u> as <u>ae</u>。<br />确保 SEO-URL 标识符是全局唯一的。 否则 SEO-URL 的创建不再清晰且不正确！';
+$_['text_option_add'] = '产品选项';
+$_['text_option_value'] = '选项值';
+$_['text_select'] = '选择';
+$_['text_radio'] = '收音机';
+$_['text_checkbox'] = '复选框';
+$_['text_input'] = '输入';
+$_['text_text'] = '文本';
+$_['text_textarea'] = '文本区域';
+$_['text_file'] = '文件';
+$_['text_date'] = '日期';
+$_['text_datetime'] = '日期 &amp; 时间';
+$_['text_time'] = '时间';
+$_['text_image'] = '图片';
+$_['text_image_additional'] = '附加图片';
+$_['text_reward'] = '产品积分价格';
+$_['text_points'] = '购买积分奖励';
+$_['text_subscription_trial'] = '%s 每 %d %s(s) 然后支付 %d';
+$_['text_subscription_description'] = '%s 每 %d %s(s) 支付 %d 次';
+$_['text_subscription_cancel'] = '%s 每 %d %s(s) 直到终止';
+
+// 柱子
+$_['column_name'] = '产品标题';
+$_['column_model'] = '产品编号';
+$_['column_image'] = '图片';
+$_['column_price'] = '价格（净价）';
+$_['column_quantity'] = '数量';
+$_['column_status'] = '状态';
+$_['column_ip'] = 'IP';
+$_['column_store'] = '在线商店（商店）列表';
+$_['column_country'] = '国家';
+$_['column_date_added'] = '添加日期';
+$_['column_action'] = '动作';
+
+// 入口
+$_['entry_name'] = '产品名称';
+$_['entry_description'] = '描述';
+$_['entry_meta_title'] = '元标签标题';
+$_['entry_meta_keyword'] = '元标签关键字';
+$_['entry_meta_description'] = '元标签描述';
+$_['entry_store'] = '在线商店（商店）列表';
+$_['entry_keyword'] = 'SEO URL 标识符（关键字）';
+$_['entry_model'] = '产品编号';
+$_['entry_sku'] = 'SKU';
+$_['entry_upc'] = 'UPC';
+$_['entry_ean'] = 'EAN';
+$_['entry_jan'] = 'JAN';
+$_['entry_isbn'] = 'ISBN';
+$_['entry_mpn'] = 'MPN';
+$_['entry_location'] = '仓库/位置';
+$_['entry_shipping'] = '需要运送';
+$_['entry_manufacturer'] = '制造商/品牌';
+$_['entry_date_available'] = '可用性 | 日期从';
+$_['entry_quantity'] = '数量';
+$_['entry_minimum'] = '最小起订量';
+$_['entry_stock_status'] = '状态缺货';
+$_['entry_price'] = '价格（净价）';
+$_['entry_tax_class'] = '税种';
+$_['entry_points'] = '积分';
+$_['entry_subtract'] = '管理库存';
+$_['entry_weight_class'] = '重量单位';
+$_['entry_weight'] = '重量';
+$_['entry_dimension'] = '尺寸（长 x 宽 x 高）';
+$_['entry_length_class'] = '长度单位';
+$_['entry_length'] = '长度';
+$_['entry_width'] = '宽度';
+$_['entry_height'] = '身高';
+$_['entry_option'] = '选项';
+$_['entry_option_value'] = '选项值';
+$_['entry_customer_group'] = '客户组';
+$_['entry_date_start'] = '日期开始';
+$_['entry_date_end'] = '结束日期';
+$_['entry_priority'] = '优先';
+$_['entry_attribute'] = '产品属性';
+$_['entry_attribute_group'] = '属性组';
+$_['entry_image'] = '图片';
+$_['entry_text'] = '规范/文本';
+$_['entry_required'] = '必需';
+$_['entry_status'] = '状态';
+$_['entry_sort_order'] = '排序顺序';
+$_['entry_category']= '类别';
+$_['entry_filter'] = '过滤器';
+$_['entry_download'] = '下载';
+$_['entry_related'] = '相关产品';
+$_['entry_tag'] = '产品标签';
+$_['entry_reward'] = '积分（客户购买奖励积分）';
+$_['entry_layout'] = '布局覆盖';
+$_['entry_subscription'] = '订阅计划';
+
+// 帮助
+$_['help_tag'] = '用逗号(,)分隔';
+$_['help_sku'] = '库存单位';
+$_['help_upc'] = '通用产品代码';
+$_['help_ean'] = '欧洲商品编号';
+$_['help_jan'] = '日文商品编号';
+$_['help_isbn'] = '国际标准书号';
+$_['help_mpn'] = '制造商部件号';
+$_['help_minimum'] = '强制执行最低订购量';
+$_['help_stock_status'] = '如果产品不再可用或无货则显示状态';
+$_['help_manufacturer'] = '(自动完成)';
+$_['help_category'] = '(自动完成)';
+$_['help_filter'] = '(自动完成)';
+$_['help_download'] = '(自动完成)';
+$_['help_related'] = '(自动完成)';
+$_['help_option'] = '(自动完成)';
+$_['help_points'] = '购买该商品所需的点数。 如果您不想用积分购买该产品，请输入 0。';
+
+// 错误
+$_['error_warning'] = '警告：请仔细检查表格是否有错误！';
+$_['error_permission'] = '警告：您没有修改产品的权限！';
+$_['error_name'] = '产品标题必须大于1且小于255个字符！';
+$_['error_meta_title'] = 'Meta 标签标题必须大于 1 且小于 255 个字符！';
+$_['error_model'] = '产品ID必须大于1且小于64个字符！';
+$_['error_seo'] = '需要 SEO URL 标识符或唯一关键字！';
+$_['error_keyword'] = 'SEO URL 标识符必须是唯一的！';
+$_['error_required'] = '%s required!';
