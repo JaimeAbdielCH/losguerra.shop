@@ -29,6 +29,5 @@ storageout/store/cache/template/*
 /opencartapp/vqmod/mods.cache
 
 /opencartapp/system/storage/logs/error.log
-opencartapp/system/storage/logs/error.log
-opencartapp/gerencia/config.php
+/opencartapp/system/storage/logs/error.log
 /opencartapp/image/cache/*
