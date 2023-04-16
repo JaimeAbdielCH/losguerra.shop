@@ -731,7 +731,7 @@
                 var yearHtml = '<select class="yearselect">';
                 for (var y = minYear; y <= maxYear; y++) {
                     yearHtml += '<option value="' + y + '"' +
-                        (y === currentYear ? ' selected' : '') +
+                        (y === currentYear ? ' selected="selected"' : '') +
                         '>' + y + '</option>';
                 }
                 yearHtml += '</select>';

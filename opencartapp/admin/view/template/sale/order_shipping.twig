@@ -17,7 +17,6 @@
       <h1>{{ text_picklist }} #{{ order.order_id }}</h1>
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
-
         <div class="col">
           <div class="form-control-plaintext p-0 border rounded mb-3">
             <div class="lead p-2"><strong>{{ text_invoice }}</strong>
@@ -103,11 +102,11 @@
               {% else %}
                 &nbsp;
               {% endif %}
+
             </div>
           </div>
         </div>
 
-        {% if order.telephone %}
         <div class="col">
           <div class="form-control-plaintext p-0 border rounded mb-3">
             <div class="lead p-2"><strong>{{ text_customer_telephone }}</strong>
@@ -120,13 +119,11 @@
             </div>
           </div>
         </div>
-        {% endif %}
 
       </div>
 
       <div class="row row-cols-1 row-cols-sm-2">
         <div class="col">
-
           <div class="form-control-plaintext p-0 border rounded mb-3">
             <div class="lead p-2"><strong>{{ text_shipping_address }}</strong>
               <br/>
@@ -138,7 +135,6 @@
             </div>
           </div>
         </div>
-
         <div class="col">
           <div class="form-control-plaintext p-0 border rounded mb-3">
             <div class="lead p-2"><strong>{{ text_store_address }}</strong>
@@ -147,7 +143,6 @@
             </div>
           </div>
         </div>
-
       </div>
 
       <table class="table table-bordered">
@@ -206,6 +201,11 @@
                 {% if product.reward %}
                   <br/>
                   <small> - {{ text_points }} {{ product.reward }}</small>
+                {% endif %}
+
+                {% if product.subscription %}
+                  <br/>
+                  <small> - {{ text_subscription }} {{ product.subscription }} </small>
                 {% endif %}
 
               </td>

@@ -24,19 +24,14 @@ class Coupon extends \Opencart\System\Engine\Controller {
 
 		if (!$json) {
 			if ($coupon) {
-				$json['success'] = $this->language->get('text_success');
-
 				$this->session->data['coupon'] = $coupon;
+
+				$json['success'] = $this->language->get('text_success');
 			} else {
-				$json['success'] = $this->language->get('text_remove');
-
 				unset($this->session->data['coupon']);
-			}
 
-			unset($this->session->data['shipping_method']);
-			unset($this->session->data['shipping_methods']);
-			unset($this->session->data['payment_method']);
-			unset($this->session->data['payment_methods']);
+				$json['success'] = $this->language->get('text_remove');
+			}
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

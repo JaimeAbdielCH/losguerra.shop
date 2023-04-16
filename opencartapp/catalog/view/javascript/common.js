@@ -22,26 +22,22 @@ function getURLVar(key) {
     }
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
     // Tooltip
-    var oc_tooltip = function() {
-        // Get tooltip instance
-        tooltip = bootstrap.Tooltip.getInstance(this);
-        if (!tooltip) {
-            // Apply to current element
-            tooltip = bootstrap.Tooltip.getOrCreateInstance(this);
-            tooltip.show();
-        }
+    var oc_tooltip = function () {
+        // Apply to all on current page
+        tooltip = bootstrap.Tooltip.getOrCreateInstance(this);
+        tooltip.show();
     }
 
     $(document).on('mouseenter', '[data-bs-toggle=\'tooltip\']', oc_tooltip);
 
-    $(document).on('click', 'button', function() {
+    $(document).on('click', 'button', function () {
         $('.tooltip').remove();
     });
 
     // Date
-    var oc_datetimepicker = function() {
+    var oc_datetimepicker = function () {
         $(this).daterangepicker({
             singleDatePicker: true,
             autoApply: true,
@@ -49,7 +45,7 @@ $(document).ready(function() {
             locale: {
                 format: 'YYYY-MM-DD'
             }
-        }, function(start, end) {
+        }, function (start, end) {
             $(this.element).val(start.format('YYYY-MM-DD'));
         });
     }
@@ -57,7 +53,7 @@ $(document).ready(function() {
     $(document).on('focus', '.date', oc_datetimepicker);
 
     // Time
-    var oc_datetimepicker = function() {
+    var oc_datetimepicker = function () {
         $(this).daterangepicker({
             singleDatePicker: true,
             datePicker: false,
@@ -68,9 +64,9 @@ $(document).ready(function() {
             locale: {
                 format: 'HH:mm'
             }
-        }, function(start, end) {
+        }, function (start, end) {
             $(this.element).val(start.format('HH:mm'));
-        }).on('show.daterangepicker', function(ev, picker) {
+        }).on('show.daterangepicker', function (ev, picker) {
             picker.container.find('.calendar-table').hide();
         });
     }
@@ -78,7 +74,7 @@ $(document).ready(function() {
     $(document).on('focus', '.time', oc_datetimepicker);
 
     // Date Time
-    var oc_datetimepicker = function() {
+    var oc_datetimepicker = function () {
         $('.datetime').daterangepicker({
             singleDatePicker: true,
             autoApply: true,
@@ -88,7 +84,7 @@ $(document).ready(function() {
             locale: {
                 format: 'YYYY-MM-DD HH:mm'
             }
-        }, function(start, end) {
+        }, function (start, end) {
             $(this.element).val(start.format('YYYY-MM-DD HH:mm'));
         });
     }
@@ -96,21 +92,20 @@ $(document).ready(function() {
     $(document).on('focus', '.datetime', oc_datetimepicker);
 
     // Alert Fade
-    var oc_alert = function() {
-        window.setTimeout(function() {
-            $('.alert-dismissible').fadeTo(3000, 0, function() {
-                $(this).remove();
-            });
-        }, 3000);
+    var oc_alert = function () {
+        window.setTimeout(function () {
+            //$('.alert-dismissible').fadeTo(1000, 0, function () {
+            //    $(this).remove();
+            //});
+        }, 7000);
     }
 
     $(document).on('click', 'button', oc_alert);
-    $(document).on('click', 'change', oc_alert);
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
     // Currency
-    $('#form-currency .dropdown-item').on('click', function(e) {
+    $('#form-currency .dropdown-item').on('click', function (e) {
         e.preventDefault();
 
         $('#form-currency input[name=\'code\']').val($(this).attr('href'));
@@ -119,7 +114,7 @@ $(document).ready(function() {
     });
 
     // Search
-    $('#search input[name=\'search\']').parent().find('button').on('click', function() {
+    $('#search input[name=\'search\']').parent().find('button').on('click', function () {
         var url = $('base').attr('href') + 'index.php?route=product/search&language=' + $(this).attr('data-lang');
 
         var value = $('header #search input[name=\'search\']').val();
@@ -131,14 +126,14 @@ $(document).ready(function() {
         location = url;
     });
 
-    $('#search input[name=\'search\']').on('keydown', function(e) {
+    $('#search input[name=\'search\']').on('keydown', function (e) {
         if (e.keyCode == 13) {
             $('header #search input[name=\'search\']').parent().find('button').trigger('click');
         }
     });
 
     // Menu
-    $('#menu .dropdown-menu').each(function() {
+    $('#menu .dropdown-menu').each(function () {
         var menu = $('#menu').offset();
         var dropdown = $(this).parent().offset();
 
@@ -150,7 +145,7 @@ $(document).ready(function() {
     });
 
     // Product List
-    $('#button-list').on('click', function() {
+    $('#button-list').on('click', function () {
         var element = this;
 
         $('#product-list').attr('class', 'row row-cols-1 product-list');
@@ -162,7 +157,7 @@ $(document).ready(function() {
     });
 
     // Product Grid
-    $('#button-grid').on('click', function() {
+    $('#button-grid').on('click', function () {
         var element = this;
 
         // What a shame bootstrap does not take into account dynamically loaded columns
@@ -184,7 +179,7 @@ $(document).ready(function() {
     }
 
     /* Agree to Terms */
-    $('body').on('click', '.modal-link', function(e) {
+    $('body').on('click', '.modal-link', function (e) {
         e.preventDefault();
 
         var element = this;
@@ -194,7 +189,7 @@ $(document).ready(function() {
         $.ajax({
             url: $(element).attr('href'),
             dataType: 'html',
-            success: function(html) {
+            success: function (html) {
                 $('body').append(html);
 
                 $('#modal-information').modal('show');
@@ -203,27 +198,27 @@ $(document).ready(function() {
     });
 
     // Cookie Policy
-    $('#cookie button').on('click', function() {
+    $('#cookie button').on('click', function () {
         var element = this;
 
         $.ajax({
             url: $(this).val(),
             type: 'get',
             dataType: 'json',
-            beforeSend: function() {
+            beforeSend: function () {
                 $(element).button('loading');
             },
-            complete: function() {
-                $(element).button('reset');
+            complete: function () {
+                $(element).prop('disabled', false).removeClass('loading');
             },
-            success: function(json) {
+            success: function (json) {
                 if (json['success']) {
-                    $('#cookie').fadeOut(400, function() {
+                    $('#cookie').fadeOut(400, function () {
                         $('#cookie').remove();
                     });
                 }
             },
-            error: function(xhr, ajaxOptions, thrownError) {
+            error: function (xhr, ajaxOptions, thrownError) {
                 console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
             }
         });
@@ -231,7 +226,7 @@ $(document).ready(function() {
 });
 
 // Forms
-$(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function(e) {
+$(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function (e) {
     e.preventDefault();
 
     var element = this;
@@ -264,9 +259,6 @@ $(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function(e) {
         enctype = 'application/x-www-form-urlencoded';
     }
 
-    var html = $(button).html();
-    var width = $(button).width();
-
     // https://github.com/opencart/opencart/issues/9690
     if (typeof CKEDITOR != 'undefined') {
         for (instance in CKEDITOR.instances) {
@@ -290,13 +282,13 @@ $(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function(e) {
         cache: false,
         contentType: enctype,
         processData: false,
-        beforeSend: function() {
-            $(button).button('loading');
+        beforeSend: function () {
+            $(button).prop('disabled', true).addClass('loading');
         },
-        complete: function() {
-            $(button).button('reset');
+        complete: function () {
+            $(button).prop('disabled', false).removeClass('loading');
         },
-        success: function(json) {
+        success: function (json) {
             $('.alert-dismissible').remove();
             $(form).find('.is-invalid').removeClass('is-invalid');
             $(form).find('.invalid-feedback').removeClass('d-block');
@@ -316,7 +308,7 @@ $(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function(e) {
                     $('#alert').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['error']['warning'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
                 }
 
-                for (var key in json['error']) {
+                for (key in json['error']) {
                     $('#input-' + key.replaceAll('_', '-')).addClass('is-invalid').find('.form-control, .form-select, .form-check-input, .form-check-label').addClass('is-invalid');
                     $('#error-' + key.replaceAll('_', '-')).html(json['error'][key]).addClass('d-block');
                 }
@@ -335,18 +327,18 @@ $(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function(e) {
             }
 
             // Replace any form values that correspond to form names.
-            for (var key in json) {
+            for (key in json) {
                 $(form).find('[name=\'' + key + '\']').val(json[key]);
             }
         },
-        error: function(xhr, ajaxOptions, thrownError) {
+        error: function (xhr, ajaxOptions, thrownError) {
             console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
         }
     });
 });
 
 // Upload
-$(document).on('click', 'button[data-oc-toggle=\'upload\']', function() {
+$(document).on('click', 'button[data-oc-toggle=\'upload\']', function () {
     var element = this;
 
     if (!$(element).prop('disabled')) {
@@ -356,7 +348,7 @@ $(document).on('click', 'button[data-oc-toggle=\'upload\']', function() {
 
         $('#form-upload input[name=\'file\']').trigger('click');
 
-        $('#form-upload input[name=\'file\']').on('change', function(e) {
+        $('#form-upload input[name=\'file\']').on('change', function (e) {
             if ((this.files[0].size / 1024) > $(element).attr('data-oc-size-max')) {
                 alert($(element).attr('data-oc-size-error'));
 
@@ -368,7 +360,7 @@ $(document).on('click', 'button[data-oc-toggle=\'upload\']', function() {
             clearInterval(timer);
         }
 
-        var timer = setInterval(function() {
+        var timer = setInterval(function () {
             if ($('#form-upload input[name=\'file\']').val() != '') {
                 clearInterval(timer);
 
@@ -380,13 +372,13 @@ $(document).on('click', 'button[data-oc-toggle=\'upload\']', function() {
                     cache: false,
                     contentType: false,
                     processData: false,
-                    beforeSend: function() {
-                        $(element).button('loading');
+                    beforeSend: function () {
+                        $(element).prop('disabled', true).addClass('loading');
                     },
-                    complete: function() {
-                        $(element).button('reset');
+                    complete: function () {
+                        $(element).prop('disabled', false).removeClass('loading');
                     },
-                    success: function(json) {
+                    success: function (json) {
                         console.log(json);
 
                         if (json['error']) {
@@ -401,7 +393,7 @@ $(document).on('click', 'button[data-oc-toggle=\'upload\']', function() {
                             $($(element).attr('data-oc-target')).attr('value', json['code']);
                         }
                     },
-                    error: function(xhr, ajaxOptions, thrownError) {
+                    error: function (xhr, ajaxOptions, thrownError) {
                         console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                     }
                 });
@@ -433,7 +425,7 @@ class Chain {
 
             var jqxhr = call();
 
-            jqxhr.done(function() {
+            jqxhr.done(function () {
                 chain.execute();
             });
         } else {
@@ -445,63 +437,44 @@ class Chain {
 var chain = new Chain();
 
 // Autocomplete
-+function($) {
-    $.fn.autocomplete = function(option) {
-        return this.each(function() {
-            var element = this;
-            var $dropdown = $('#' + $(element).attr('data-oc-target'));
+(function ($) {
+    $.fn.autocomplete = function (option) {
+        return this.each(function () {
+            var $this = $(this);
+            var $dropdown = $('#' + $this.attr('list'));
 
             this.timer = null;
             this.items = [];
 
             $.extend(this, option);
 
-            // Focus in
-            $(element).on('focusin', function() {
-                element.request();
+            // Focus
+            $this.on('focus', function () {
+                this.request();
             });
 
-            // Focus out
-            $(element).on('focusout', function(e) {
-                if (!e.relatedTarget || !$(e.relatedTarget).hasClass('dropdown-item')) {
-                    $dropdown.removeClass('show');
-                }
-            });
+            // Keydown
+            $this.on('input', function (e) {
+                this.request();
 
-            // Input
-            $(element).on('input', function(e) {
-                element.request();
-            });
+                var value = $this.val();
 
-            // Click
-            $dropdown.on('click', 'a', function(e) {
-                e.preventDefault();
-
-                var value = $(this).attr('href');
-
-                if (element.items[value] !== undefined) {
-                    element.select(element.items[value]);
-
-                    $dropdown.removeClass('show');
+                if (value && this.items[value]) {
+                    this.select(this.items[value]);
                 }
             });
 
             // Request
-            this.request = function() {
+            this.request = function () {
                 clearTimeout(this.timer);
 
-                $('#autocomplete-loading').remove();
-
-                $dropdown.prepend('<li id="autocomplete-loading"><span class="dropdown-item text-center disabled"><i class="fa-solid fa-circle-notch fa-spin"></i></span></li>');
-                $dropdown.addClass('show');
-
-                this.timer = setTimeout(function(object) {
+                this.timer = setTimeout(function (object) {
                     object.source($(object).val(), $.proxy(object.response, object));
                 }, 50, this);
             }
 
             // Response
-            this.response = function(json) {
+            this.response = function (json) {
                 var html = '';
                 var category = {};
                 var name;
@@ -510,11 +483,11 @@ var chain = new Chain();
                 if (json.length) {
                     for (i = 0; i < json.length; i++) {
                         // update element items
-                        this.items[json[i]['value']] = json[i];
+                        this.items[json[i]['label']] = json[i];
 
                         if (!json[i]['category']) {
                             // ungrouped items
-                            html += '<li><a href="' + json[i]['value'] + '" class="dropdown-item">' + json[i]['label'] + '</a></li>';
+                            html += '<option>' + json[i]['label'] + '</option>';
                         } else {
                             // grouped items
                             name = json[i]['category'];
@@ -528,10 +501,8 @@ var chain = new Chain();
                     }
 
                     for (name in category) {
-                        html += '<li><h6 class="dropdown-header">' + name + '</h6></li>';
-
                         for (j = 0; j < category[name].length; j++) {
-                            html += '<li><a href="' + category[name][j]['value'] + '" class="dropdown-item">' + category[name][j]['label'] + '</a></li>';
+                            html += '<option value="' + category[name][j]['label'] + '">' + name + '</option>';
                         }
                     }
                 }
@@ -540,26 +511,4 @@ var chain = new Chain();
             }
         });
     }
-}(jQuery);
-
-// Button
-$(document).ready(function() {
-    +function($) {
-        $.fn.button = function(state) {
-            return this.each(function() {
-                var element = this;
-
-                if (state == 'loading') {
-                    this.html = $(element).html();
-                    this.state = $(element).prop('disabled');
-
-                    $(element).prop('disabled', true).width($(element).width()).html('<i class="fa-solid fa-circle-notch fa-spin text-light"></i>');
-                }
-
-                if (state == 'reset') {
-                    $(element).prop('disabled', this.state).width('').html(this.html);
-                }
-            });
-        }
-    }(jQuery);
-});
+})(window.jQuery);

@@ -3,7 +3,7 @@ namespace Opencart\Admin\Controller\Startup;
 class Permission extends \Opencart\System\Engine\Controller {
 	public function index(): object|null {
 		if (isset($this->request->get['route'])) {
-			$pos = strrpos($this->request->get['route'], '.');
+			$pos = strrpos($this->request->get['route'], '|');
 
 			if ($pos === false) {
 				$route = $this->request->get['route'];
@@ -18,7 +18,7 @@ class Permission extends \Opencart\System\Engine\Controller {
 				'common/logout',
 				'common/forgotten',
 				'common/authorize',
-				'common/language',
+				'cron/cron',
 				'error/not_found',
 				'error/permission'
 			];

@@ -2,7 +2,7 @@
 /**
  * @package        OpenCart
  * @author        Daniel Kerr
- * @copyright    Copyright (c) 2005 - 2022, OpenCart, Ltd. (https://www.opencart.com/)
+ * @copyright    Copyright (c) 2005 - 2017, OpenCart, Ltd. (https://www.opencart.com/)
  * @license        https://opensource.org/licenses/GPL-3.0
  * @link        https://www.opencart.com
  */
@@ -13,17 +13,17 @@
 
 namespace Opencart\System\Library;
 class Image {
-	private string $file;
-	private object $image;
 	private int $width;
 	private int $height;
+	private string $file;
+	private object $image;	
 	private string $bits;
 	private string $mime;
 
 	/**
 	 * Constructor
 	 *
-	 * @param	string  $file
+	 * @param string $file
 	 *
 	 */
 	public function __construct(string $file) {
@@ -45,8 +45,6 @@ class Image {
 				$this->image = imagecreatefromgif($file);
 			} elseif ($this->mime == 'image/png') {
 				$this->image = imagecreatefrompng($file);
-
-				imageinterlace($this->image, false);
 			} elseif ($this->mime == 'image/jpeg') {
 				$this->image = imagecreatefromjpeg($file);
 			} elseif ($this->mime == 'image/webp') {
@@ -58,7 +56,7 @@ class Image {
 	}
 
 	/**
-	 * getFile
+	 *
 	 *
 	 * @return    string
 	 */
@@ -67,16 +65,16 @@ class Image {
 	}
 
 	/**
-	 * getImage
 	 *
-	 * @return    object
+	 *
+	 * @return    array
 	 */
 	public function getImage(): object {
 		return $this->image;
 	}
 
 	/**
-	 * getWidth
+	 *
 	 *
 	 * @return    int
 	 */
@@ -85,7 +83,7 @@ class Image {
 	}
 
 	/**
-	 * getHeight
+	 *
 	 *
 	 * @return    int
 	 */
@@ -94,7 +92,7 @@ class Image {
 	}
 
 	/**
-	 * getBits
+	 *
 	 *
 	 * @return    string
 	 */
@@ -103,7 +101,7 @@ class Image {
 	}
 
 	/**
-	 * getMime
+	 *
 	 *
 	 * @return    string
 	 */
@@ -112,12 +110,10 @@ class Image {
 	}
 
 	/**
-	 * Save
 	 *
-	 * @param	  string  $file
-	 * @param     int  $quality
 	 *
-	 * @return 	  void
+	 * @param string $file
+	 * @param int $quality
 	 */
 	public function save(string $file, int $quality = 90): void {
 		$info = pathinfo($file);
@@ -140,13 +136,11 @@ class Image {
 	}
 
 	/**
-	 * Resize
 	 *
-	 * @param    int  $width
-	 * @param 	 int  $height
-	 * @param 	 string  $default
 	 *
-	 * @return   void
+	 * @param int $width
+	 * @param int $height
+	 * @param string $default
 	 */
 	public function resize(int $width = 0, int $height = 0, string $default = ''): void {
 		if (!$this->width || !$this->height) {
@@ -188,7 +182,7 @@ class Image {
 
 			imagecolortransparent($this->image, $background);
 
-		} elseif ($this->mime == 'image/webp') {
+		} else if ($this->mime == 'image/webp') {
 			imagealphablending($this->image, false);
 			imagesavealpha($this->image, true);
 
@@ -209,12 +203,10 @@ class Image {
 	}
 
 	/**
-	 * Watermark
 	 *
-	 * @param    object  $watermark
-	 * @param	 string  $position
 	 *
-	 * @return   void
+	 * @param string $watermark
+	 * @param string $position
 	 */
 	public function watermark(\Opencart\System\Library\Image $watermark, string $position = 'bottomright'): void {
 		switch ($position) {
@@ -264,14 +256,12 @@ class Image {
 	}
 
 	/**
-	 * Crop
 	 *
-	 * @param    int  $top_x
-	 * @param	 int  $top_y
-	 * @param	 int  $bottom_x
-	 * @param	 int  $bottom_y
 	 *
-	 * @return   void
+	 * @param int $top_x
+	 * @param int $top_y
+	 * @param int $bottom_x
+	 * @param int $bottom_y
 	 */
 	public function crop(int $top_x, int $top_y, int $bottom_x, int $bottom_y): void {
 		$image_old = $this->image;
@@ -285,12 +275,10 @@ class Image {
 	}
 
 	/**
-	 * Rotate
 	 *
-	 * @param    int  $degree
-	 * @param	 string  $color
 	 *
-	 * @return   void
+	 * @param int $degree
+	 * @param string $color
 	 */
 	public function rotate(int $degree, string $color = 'FFFFFF'): void {
 		$rgb = $this->html2rgb($color);
@@ -302,9 +290,8 @@ class Image {
 	}
 
 	/**
-	 * Filter
 	 *
-	 * @return   void
+	 *
 	 */
 	private function filter(): void {
 		$args = func_get_args();
@@ -313,15 +300,13 @@ class Image {
 	}
 
 	/**
-	 * Text
 	 *
-	 * @param    string  $text
-	 * @param	 int  $x
-	 * @param	 int  $y
-	 * @param	 int  $size
-	 * @param	 string  $color
 	 *
-	 * @return   void
+	 * @param string $text
+	 * @param int $x
+	 * @param int $y
+	 * @param int $size
+	 * @param string $color
 	 */
 	private function text(string $text, int $x = 0, int $y = 0, int $size = 5, string $color = '000000'): void {
 		$rgb = $this->html2rgb($color);
@@ -330,25 +315,23 @@ class Image {
 	}
 
 	/**
-	 * Merge
 	 *
-	 * @param    object  $merge
-	 * @param 	 int  $x
-	 * @param 	 int  $y
-	 * @param 	 int  $opacity
 	 *
-	 * @return 	 void
+	 * @param object $merge
+	 * @param int $x
+	 * @param int $y
+	 * @param int $opacity
 	 */
 	private function merge(object $merge, int $x = 0, int $y = 0, int $opacity = 100): void {
 		imagecopymerge($this->image, $merge->getImage(), $x, $y, 0, 0, $merge->getWidth(), $merge->getHeight(), $opacity);
 	}
 
 	/**
-	 * HTML2RGB
 	 *
-	 * @param    string  $color
 	 *
-	 * @return 	 array
+	 * @param string $color
+	 *
+	 * @return    array
 	 */
 	private function html2rgb(string $color): array {
 		if ($color[0] == '#') {
@@ -360,7 +343,7 @@ class Image {
 		} elseif (strlen($color) == 3) {
 			[$r, $g, $b] = [$color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2]];
 		} else {
-			return [];
+			return false;
 		}
 
 		$r = hexdec($r);

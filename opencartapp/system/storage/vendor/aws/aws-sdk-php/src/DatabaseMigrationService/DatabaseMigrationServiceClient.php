@@ -133,7 +133,5 @@ use Aws\AwsClient;
  * @method \GuzzleHttp\Promise\Promise stopReplicationTaskAsync(array $args = [])
  * @method \Aws\Result testConnection(array $args = [])
  * @method \GuzzleHttp\Promise\Promise testConnectionAsync(array $args = [])
- * @method \Aws\Result updateSubscriptionsToEventBridge(array $args = [])
- * @method \GuzzleHttp\Promise\Promise updateSubscriptionsToEventBridgeAsync(array $args = [])
  */
 class DatabaseMigrationServiceClient extends AwsClient {}

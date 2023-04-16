@@ -1,5 +1,6 @@
 <?php
 namespace Opencart\Catalog\Controller\Product;
+use \Opencart\System\Helper as Helper;
 class Compare extends \Opencart\System\Engine\Controller {
 	public function index(): void {
 		$this->load->language('product/compare');
@@ -38,8 +39,8 @@ class Compare extends \Opencart\System\Engine\Controller {
 			'href' => $this->url->link('product/compare', 'language=' . $this->config->get('config_language'))
 		];
 
-		$data['add_to_cart'] = $this->url->link('checkout/cart.add', 'language=' . $this->config->get('config_language'));
-		$data['cart'] = $this->url->link('common/cart.info', 'language=' . $this->config->get('config_language'));
+		$data['add_to_cart'] = $this->url->link('checkout/cart|add', 'language=' . $this->config->get('config_language'));
+		$data['cart'] = $this->url->link('common/cart|info', 'language=' . $this->config->get('config_language'));
 
 		if (isset($this->session->data['success'])) {
 			$data['success'] = $this->session->data['success'];
@@ -99,7 +100,7 @@ class Compare extends \Opencart\System\Engine\Controller {
 					'thumb'        => $image,
 					'price'        => $price,
 					'special'      => $special,
-					'description'  => oc_substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, 200) . '..',
+					'description'  => Helper\Utf8\substr(strip_tags(html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8')), 0, 200) . '..',
 					'model'        => $product_info['model'],
 					'manufacturer' => $product_info['manufacturer'],
 					'availability' => $availability,
@@ -170,7 +171,7 @@ class Compare extends \Opencart\System\Engine\Controller {
 				unset($this->session->data['compare'][$key]);
 			}
 
-			// If we count a numeric value that is greater than 4 products, we remove the first one
+			// If greater than 4 products then remove the first one
 			if (count($this->session->data['compare']) >= 4) {
 				array_shift($this->session->data['compare']);
 			}

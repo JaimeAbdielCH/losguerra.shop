@@ -36,19 +36,16 @@ class Cart extends \Opencart\System\Engine\Controller {
 			$description = '';
 
 			if ($product['subscription']) {
-				if ($product['subscription']['trial_status']) {
-					$trial_price = $this->currency->format($this->tax->calculate($product['subscription']['trial_price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-					$trial_cycle = $product['subscription']['trial_cycle'];
-					$trial_frequency = $this->language->get('text_' . $product['subscription']['trial_frequency']);
-					$trial_duration = $product['subscription']['trial_duration'];
+				$trial_price = $this->currency->format($this->tax->calculate($product['subscription']['trial_price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				$trial_cycle = $product['subscription']['trial_cycle'];
+				$trial_frequency = $this->language->get('text_' . $product['subscription']['trial_frequency']);
+				$trial_duration = $product['subscription']['trial_duration'];
 
+				if ($product['subscription']['trial_status']) {
 					$description .= sprintf($this->language->get('text_subscription_trial'), $trial_price, $trial_cycle, $trial_frequency, $trial_duration);
 				}
 
-				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
-					$price = $this->currency->format($this->tax->calculate($product['subscription']['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
-				}
-
+				$price = $this->currency->format($this->tax->calculate($product['subscription']['price'], $product['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
 				$cycle = $product['subscription']['cycle'];
 				$frequency = $this->language->get('text_' . $product['subscription']['frequency']);
 				$duration = $product['subscription']['duration'];
@@ -70,7 +67,6 @@ class Cart extends \Opencart\System\Engine\Controller {
 				'quantity'     => $product['quantity'],
 				'price'        => $price,
 				'total'        => $total,
-				'reward'       => $product['reward'],
 				'href'         => $this->url->link('product/product', 'language=' . $this->config->get('config_language') . '&product_id=' . $product['product_id'])
 			];
 		}
@@ -98,9 +94,9 @@ class Cart extends \Opencart\System\Engine\Controller {
 			];
 		}
 
-		$data['list'] = $this->url->link('common/cart.info', 'language=' . $this->config->get('config_language'));
-		$data['product_remove'] = $this->url->link('checkout/cart.remove', 'language=' . $this->config->get('config_language'));
-		$data['voucher_remove'] = $this->url->link('checkout/voucher.remove', 'language=' . $this->config->get('config_language'));
+		$data['list'] = $this->url->link('common/cart|info', 'language=' . $this->config->get('config_language'));
+		$data['product_remove'] = $this->url->link('checkout/cart|remove', 'language=' . $this->config->get('config_language'));
+		$data['voucher_remove'] = $this->url->link('checkout/voucher|remove', 'language=' . $this->config->get('config_language'));
 
 		$data['cart'] = $this->url->link('checkout/cart', 'language=' . $this->config->get('config_language'));
 		$data['checkout'] = $this->url->link('checkout/checkout', 'language=' . $this->config->get('config_language'));

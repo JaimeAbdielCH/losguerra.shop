@@ -79,13 +79,9 @@ $(document).ready(function () {
 $(document).ready(function () {
     // Tooltip
     var oc_tooltip = function () {
-        // Get tooltip instance
+        // Apply to all on current page
         tooltip = bootstrap.Tooltip.getOrCreateInstance(this);
-
-        if (!tooltip) {
-            // Apply to current element
-            tooltip.show();
-        }
+        tooltip.show();
     }
 
     $(document).on('mouseenter', '[data-bs-toggle=\'tooltip\']', oc_tooltip);
@@ -155,7 +151,7 @@ $(document).ready(function () {
             $('.alert-dismissible').fadeTo(1000, 0, function () {
                 $(this).remove();
             });
-        }, 6000);
+        }, 7000);
     }
 
     $(document).on('click', 'button', oc_alert);
@@ -217,10 +213,10 @@ $(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function (e) {
         dataType: 'json',
         contentType: 'application/x-www-form-urlencoded',
         beforeSend: function () {
-            $(button).button('loading');
+            $(button).prop('disabled', true).addClass('loading');
         },
         complete: function () {
-            $(button).button('reset');
+            $(button).prop('disabled', false).removeClass('loading');
         },
         success: function (json) {
             console.log(json);
@@ -299,7 +295,7 @@ $(document).on('click', '[data-oc-toggle=\'upload\']', function () {
                 clearInterval(timer);
 
                 $.ajax({
-                    url: $(element).attr('data-oc-url'),
+                    url: 'index.php?route=tool/upload|upload&user_token=' + getURLVar('user_token'),
                     type: 'post',
                     data: new FormData($('#form-upload')[0]),
                     dataType: 'json',
@@ -307,10 +303,10 @@ $(document).on('click', '[data-oc-toggle=\'upload\']', function () {
                     contentType: false,
                     processData: false,
                     beforeSend: function () {
-                        $(element).button('loading');
+                        $(element).prop('disabled', true).addClass('loading');
                     },
                     complete: function () {
-                        $(element).button('reset');
+                        $(element).prop('disabled', false).removeClass('loading');
                     },
                     success: function (json) {
                         console.log(json);
@@ -344,26 +340,20 @@ $(document).on('click', '[data-oc-toggle=\'download\']', function (e) {
     var value = $($(element).attr('data-oc-target')).val();
 
     if (value != '') {
-        location = 'index.php?route=tool/upload.download&user_token=' + getURLVar('user_token') + '&code=' + value;
+        location = 'index.php?route=tool/upload|download&user_token=' + getURLVar('user_token') + '&code=' + value;
     }
 });
 
 $(document).on('click', '[data-oc-toggle=\'clear\']', function () {
     var element = this;
 
-    // Images
-    var thumb = $(this).attr('data-oc-thumb');
+    if ($(element).attr('data-oc-thumb')) {
+        var thumb = $(this).attr('data-oc-thumb');
 
-    if (thumb !== undefined) {
         $(thumb).attr('src', $(thumb).attr('data-oc-placeholder'));
     }
 
-    // Custom fields
-    var download = $(element).parent().find('[data-oc-toggle=\'download\']');
-
-    if (download.length) {
-        $(element).parent().find('[data-oc-toggle=\'download\'], [data-oc-toggle=\'clear\']').prop('disabled', true);
-    }
+    $(element).parent().find('[data-oc-toggle=\'download\'], [data-oc-toggle=\'clear\']').prop('disabled', true);
 
     $($(this).attr('data-oc-target')).val('');
 });
@@ -378,10 +368,10 @@ $(document).on('click', '[data-oc-toggle=\'image\']', function (e) {
         url: 'index.php?route=common/filemanager&user_token=' + getURLVar('user_token') + '&target=' + encodeURIComponent($(element).attr('data-oc-target')) + '&thumb=' + encodeURIComponent($(element).attr('data-oc-thumb')),
         dataType: 'html',
         beforeSend: function () {
-            $(element).button('loading');
+            $(element).prop('disabled', true).addClass('loading');
         },
         complete: function () {
-            $(element).button('reset');
+            $(element).prop('disabled', false).removeClass('loading');
         },
         success: function (html) {
             $('body').append(html);
@@ -433,52 +423,33 @@ var chain = new Chain();
 +function ($) {
     $.fn.autocomplete = function (option) {
         return this.each(function () {
-            var element = this;
-            var $dropdown = $('#' + $(element).attr('data-oc-target'));
+            var $this = $(this);
+            var $dropdown = $('#' + $this.attr('list'));
 
             this.timer = null;
             this.items = [];
 
             $.extend(this, option);
 
-            // Focus in
-            $(element).on('focusin', function () {
-                element.request();
+            // Focus
+            $this.on('focus', function () {
+                this.request();
             });
 
-            // Focus out
-            $(element).on('focusout', function (e) {
-                if (!e.relatedTarget || !$(e.relatedTarget).hasClass('dropdown-item')) {
-                    $dropdown.removeClass('show');
-                }
-            });
+            // Keydown
+            $this.on('input', function (e) {
+                this.request();
 
-            // Input
-            $(element).on('input', function (e) {
-                element.request();
-            });
+                var value = $this.val();
 
-            // Click
-            $dropdown.on('click', 'a', function (e) {
-                e.preventDefault();
-
-                var value = $(this).attr('href');
-
-                if (element.items[value] !== undefined) {
-                    element.select(element.items[value]);
-
-                    $dropdown.removeClass('show');
+                if (value && this.items[value]) {
+                    this.select(this.items[value]);
                 }
             });
 
             // Request
             this.request = function () {
                 clearTimeout(this.timer);
-
-                $('#autocomplete-loading').remove();
-
-                $dropdown.prepend('<li id="autocomplete-loading"><span class="dropdown-item text-center disabled"><i class="fa-solid fa-circle-notch fa-spin"></i></span></li>');
-                $dropdown.addClass('show');
 
                 this.timer = setTimeout(function (object) {
                     object.source($(object).val(), $.proxy(object.response, object));
@@ -495,11 +466,11 @@ var chain = new Chain();
                 if (json.length) {
                     for (i = 0; i < json.length; i++) {
                         // update element items
-                        this.items[json[i]['value']] = json[i];
+                        this.items[json[i]['label']] = json[i];
 
                         if (!json[i]['category']) {
                             // ungrouped items
-                            html += '<li><a href="' + json[i]['value'] + '" class="dropdown-item">' + json[i]['label'] + '</a></li>';
+                            html += '<option>' + json[i]['label'] + '</option>';
                         } else {
                             // grouped items
                             name = json[i]['category'];
@@ -513,10 +484,8 @@ var chain = new Chain();
                     }
 
                     for (name in category) {
-                        html += '<li><h6 class="dropdown-header">' + name + '</h6></li>';
-
                         for (j = 0; j < category[name].length; j++) {
-                            html += '<li><a href="' + category[name][j]['value'] + '" class="dropdown-item">' + category[name][j]['label'] + '</a></li>';
+                            html += '<option value="' + category[name][j]['label'] + '">' + name + '</option>';
                         }
                     }
                 }
@@ -526,25 +495,3 @@ var chain = new Chain();
         });
     }
 }(jQuery);
-
-// Button
-$(document).ready(function() {
-    +function($) {
-        $.fn.button = function(state) {
-            return this.each(function() {
-                var element = this;
-
-                if (state == 'loading') {
-                    this.html = $(element).html();
-                    this.state = $(element).prop('disabled');
-
-                    $(element).prop('disabled', true).width($(element).width()).html('<i class="fa-solid fa-circle-notch fa-spin text-light"></i>');
-                }
-
-                if (state == 'reset') {
-                    $(element).prop('disabled', this.state).width('').html(this.html);
-                }
-            });
-        }
-    }(jQuery);
-});

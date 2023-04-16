@@ -23,13 +23,13 @@ $('#button-reset').on('click', function (e) {
     e.preventDefault();
 
     $.ajax({
-        url: 'index.php?route=common/authorize.confirm&user_token={{ user_token }}',
+        url: 'index.php?route=common/authorize|confirm&user_token={{ user_token }}',
         dataType: 'json',
         beforeSend: function () {
-            $('#button-reset').button('loading');
+            $('#button-reset').prop('disabled', true).addClass('loading');
         },
         complete: function () {
-            $('#button-reset').button('reset');
+            $('#button-reset').prop('disabled', false).removeClass('loading');
         },
         success: function (json) {
             console.log(json);

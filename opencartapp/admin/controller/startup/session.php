@@ -21,7 +21,7 @@ class Session extends \Opencart\System\Engine\Controller {
 		// Require higher security for session cookies
 		$option = [
 			'expires'  => $this->config->get('config_session_expire') ? time() + (int)$this->config->get('config_session_expire') : 0,
-			'path'     => $this->config->get('session_path'),
+			'path'     => !empty($this->request->server['PHP_SELF']) ? rtrim(dirname($this->request->server['PHP_SELF']), '/') . '/' : '/',
 			'secure'   => $this->request->server['HTTPS'],
 			'httponly' => false,
 			'SameSite' => $this->config->get('config_session_samesite')

@@ -7,7 +7,7 @@
   </ul>
   <div class="row">{{ column_left }}
     <div id="content" class="col">{{ content_top }}
-      <h1>{{ heading_title }}</h1>
+      <h2>{{ heading_title }}</h2>
       <div class="table-responsive">
         <table class="table table-bordered table-hover">
           <thead>
@@ -41,7 +41,7 @@
           </thead>
           <tbody>
             <tr>
-              <td class="text-start" style="width: 50%;">{{ description }}</td>
+              <td class="text-start" style="width: 50%;">{{ recurring_description }}</td>
               <td class="text-start" style="width: 50%;">{{ reference }}</td>
             </tr>
           </tbody>
@@ -75,9 +75,9 @@
         </table>
       </div>
 
-      {{ subscription }}
+      {{ recurring }}
 
       {{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
-{{ footer }}
+{{ footer }} 

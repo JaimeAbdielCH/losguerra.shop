@@ -38,10 +38,10 @@ $('#button-setting').on('click', function () {
         url: 'index.php?route=common/developer&user_token={{ user_token }}',
         dataType: 'html',
         beforeSend: function () {
-            $('#button-setting').button('loading');
+            $('#button-setting').prop('disabled', true).addClass('loading');
         },
         complete: function () {
-            $('#button-setting').button('reset');
+            $('#button-setting').prop('disabled', false).removeClass('loading');
         },
         success: function (html) {
             $('#modal-developer').remove();
@@ -58,7 +58,7 @@ $('#button-setting').on('click', function () {
 
 $('input[name=\'developer_sass\']').on('change', function () {
     $.ajax({
-        url: 'index.php?route=common/developer.edit&user_token={{ user_token }}',
+        url: 'index.php?route=common/developer|edit&user_token={{ user_token }}',
         type: 'post',
         data: $('input[name=\'developer_sass\']:checked'),
         dataType: 'json',
@@ -88,13 +88,13 @@ $('#modal-developer table button').on('click', function () {
     var element = this;
 
     $.ajax({
-        url: 'index.php?route=common/developer.' + $(element).attr('value') + '&user_token={{ user_token }}',
+        url: 'index.php?route=common/developer|' + $(element).attr('value') + '&user_token={{ user_token }}',
         dataType: 'json',
         beforeSend: function () {
-            $(element).button('loading');
+            $(element).prop('disabled', true).addClass('loading');
         },
         complete: function () {
-            $(element).button('reset');
+            $(element).prop('disabled', false).removeClass('loading');
         },
         success: function (json) {
             $('.alert-dismissible').remove();

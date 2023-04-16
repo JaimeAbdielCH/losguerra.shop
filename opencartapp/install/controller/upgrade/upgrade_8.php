@@ -197,20 +197,6 @@ class Upgrade8 extends \Opencart\System\Engine\Controller {
 				$this->db->query("ALTER TABLE `" . DB_PREFIX . "cart` DROP COLUMN `recurring_id`");
 				$this->db->query("ALTER TABLE `" . DB_PREFIX . "cart` ADD COLUMN `subscription_plan_id` int(11) NOT NULL AFTER `product_id`");
 			}
-			
-			// Customer Payment - extension
-			$query = $this->db->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" . DB_DATABASE . "' AND TABLE_NAME = '" . DB_PREFIX . "customer_payment' AND COLUMN_NAME = 'extension'");
-
-			if (!$query->num_rows) {
-				$this->db->query("ALTER TABLE `" . DB_PREFIX . "customer_payment` ADD COLUMN `extension` varchar(255) NOT NULL AFTER `type`");
-			}
-			
-			// Addresses
-            $query = $this->db->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" . DB_DATABASE . "' AND TABLE_NAME = '" . DB_PREFIX . "address' AND COLUMN_NAME = 'default'");
-
-            if (!$query->num_rows) {
-                $this->db->query("ALTER TABLE `" . DB_PREFIX . "address` ADD COLUMN `default` tinyint(1) NOT NULL AFTER `custom_field`");
-            }
 
 			// Drop Fields
 			$remove = [];
@@ -290,21 +276,6 @@ class Upgrade8 extends \Opencart\System\Engine\Controller {
 				'field' => 'salt'
 			];
 
-			$remove[] = [
-				'table' => 'user_login',
-				'field' => 'token'
-			];
-
-			$remove[] = [
-				'table' => 'user_login',
-				'field' => 'total'
-			];
-
-			$remove[] = [
-				'table' => 'user_login',
-				'field' => 'status'
-			];
-
 			foreach ($remove as $result) {
 				$query = $this->db->query("SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA = '" . DB_DATABASE . "' AND TABLE_NAME = '" . DB_PREFIX . $result['table'] . "' AND COLUMN_NAME = '" . $result['field'] . "'");
 
@@ -342,19 +313,15 @@ class Upgrade8 extends \Opencart\System\Engine\Controller {
 		}
 
 		if (!$json) {
-			$json['text'] = sprintf($this->language->get('text_progress'), 8, 8, 9);
+			$json['success'] = $this->language->get('text_success');
 
 			$url = '';
-
-			if (isset($this->request->get['version'])) {
-				$url .= '&version=' . $this->request->get['version'];
-			}
 
 			if (isset($this->request->get['admin'])) {
 				$url .= '&admin=' . $this->request->get['admin'];
 			}
 
-			$json['next'] = $this->url->link('upgrade/upgrade_9', $url, true);
+			$json['redirect'] = $this->url->link('install/step_4', $url, true);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

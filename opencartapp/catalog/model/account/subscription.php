@@ -1,106 +1,49 @@
 <?php
 namespace Opencart\Catalog\Model\Account;
 class Subscription extends \Opencart\System\Engine\Model {
+	public function editStatus(int $subscription_id, bool $status): void {
+		$this->db->query("UPDATE `" . DB_PREFIX . "subscription` SET `status` = '" . (bool)$status . "' WHERE `subscription_id` = '" . (int)$subscription_id . "'");
+	}
+
 	public function getSubscription(int $subscription_id): array {
-		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "subscription` `s` WHERE `subscription_id` = '" . (int)$subscription_id . "' AND `customer_id` = '" . (int)$this->customer->getId() . "'");
+		$query = $this->db->query("SELECT `s`.*, `o`.`payment_method`, `o`.`payment_code`, `o`.`currency_code` FROM `" . DB_PREFIX . "subscription` `s` LEFT JOIN `" . DB_PREFIX . "order` `o` ON (`s`.`order_id` = `o`.`order_id`) WHERE `s`.`subscription_id` = '" . (int)$subscription_id . "' AND `o`.`customer_id` = '" . (int)$this->customer->getId() . "'");
 
 		return $query->row;
 	}
 
-	public function getSubscriptionByOrderProductId(int $order_id, int $order_product_id): array {
-		$subscription_data = [];
-
-		$query = $this->db->query("SELECT * FROM  `" . DB_PREFIX . "subscription` WHERE `order_id` = '" . (int)$order_id . "' AND `order_product_id` = '" . (int)$order_product_id . "' AND `customer_id` = '" . (int)$this->customer->getId() . "'");
-
-		if ($query->num_rows) {
-			$subscription_data = $query->row;
-
-			$subscription_data['payment_method'] = ($query->row['payment_method'] ? json_decode($query->row['payment_method'], true) : '');
-			$subscription_data['shipping_method'] = ($query->row['shipping_method'] ? json_decode($query->row['shipping_method'], true) : '');
+	public function getSubscriptions(int $start = 0, int $limit = 20): array {
+		if ($start < 0) {
+			$start = 0;
 		}
 
-		return $subscription_data;
+		if ($limit < 1) {
+			$limit = 1;
+		}
+
+		$query = $this->db->query("SELECT `o`.*, `o`.`payment_method`, `o`.`currency_id`, `o`.`currency_value` FROM `" . DB_PREFIX . "subscription` `s` LEFT JOIN `" . DB_PREFIX . "order` `o` ON (`s`.`order_id` = o.`order_id`) WHERE `o`.`customer_id` = '" . (int)$this->customer->getId() . "' ORDER BY `o`.`order_id` DESC LIMIT " . (int)$start . "," . (int)$limit);
+
+		return $query->rows;
+	}
+	
+	public function getSubscriptionByReference(string $reference): array {
+		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "subscription` WHERE `reference` = '" . $this->db->escape($reference) . "'");
+
+		return $query->row;
 	}
 
-	public function getSubscriptions(array $data = []): array {
-        $sql = "SELECT * FROM `" . DB_PREFIX . "subscription`";
-
-        $implode = [];
-
-        $implode[] = "`customer_id` = '" . (int)$this->customer->getId() . "'";
-		
-		if (!empty($data['filter_subscription_id'])) {
-            $implode[] = "`subscription_id` = '" . (int)$data['filter_subscription_id'] . "'";
-        }
-
-        if (!empty($data['filter_date_next'])) {
-            $implode[] = "DATE(`date_next`) = DATE('" . $this->db->escape($data['filter_date_next']) . "')";
-        }
-
-        if (!empty($data['filter_subscription_status_id'])) {
-            $implode[] = "`subscription_status_id` = '" . (int)$data['filter_subscription_status_id'] . "'";
-        }
-
-        if ($implode) {
-            $sql .= " WHERE " . implode(" AND ", $implode);
-        }
-
-        $sql .= " ORDER BY `order_id` DESC";
-
-        if (isset($data['start']) || isset($data['limit'])) {
-            if ($data['start'] < 0) {
-                $data['start'] = 0;
-            }
-
-            if ($data['limit'] < 1) {
-                $data['limit'] = 20;
-            }
-
-            $sql .= " LIMIT " . (int)$data['start'] . "," . (int)$data['limit'];
-        }
-
-        $query = $this->db->query($sql);
-
-        return $query->rows;
-    }
-
-	public function getTotalSubscriptions(array $data = []): int {
-        $sql = "SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "subscription`";
-
-        $implode = [];
-
-        $implode[] = "`customer_id` = '" . (int)$this->customer->getId() . "'";
-		
-		if (!empty($data['filter_subscription_id'])) {
-            $implode[] = "`subscription_id` = '" . (int)$data['filter_subscription_id'] . "'";
-        }
-
-        if (!empty($data['filter_date_next'])) {
-            $implode[] = "DATE(`date_next`) = DATE('" . $this->db->escape($data['filter_date_next']) . "')";
-        }
-
-        if (!empty($data['filter_subscription_status_id'])) {
-            $implode[] = "`subscription_status_id` = '" . (int)$data['filter_subscription_status_id'] . "'";
-        }
-
-        if ($implode) {
-            $sql .= " WHERE " . implode(" AND ", $implode);
-        }
-
-        $query = $this->db->query($sql);
-
-        return (int)$query->row['total'];
-    }
-
-	public function getTotalSubscriptionByShippingAddressId(int $address_id): int {
-		$query = $this->db->query("SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "subscription` WHERE `customer_id` = '" . (int)$this->customer->getId() . "' AND `shipping_address_id` = '" . (int)$address_id . "'");
+	public function getTotalSubscriptions(): int {
+		$query = $this->db->query("SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "subscription` `s` LEFT JOIN `" . DB_PREFIX . "order` `o` ON (`s`.`order_id` = `o`.`order_id`) WHERE `o`.`customer_id` = '" . (int)$this->customer->getId() . "'");
 
 		return (int)$query->row['total'];
 	}
 
-	public function getTotalSubscriptionByPaymentAddressId(int $address_id): int {
-		$query = $this->db->query("SELECT COUNT(*) AS `total` FROM `" . DB_PREFIX . "subscription` WHERE `customer_id` = '" . (int)$this->customer->getId() . "' AND `payment_address_id` = '" . (int)$address_id . "'");
+	public function getTransactions(int $subscription_id): array {
+		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "subscription_transaction` WHERE `subscription_id` = '" . (int)$subscription_id . "'");
 
-		return (int)$query->row['total'];
+		return $query->rows;
+	}
+
+	public function addTransaction(int $subscription_id, int $order_id, int $transaction_id, string $description, float $amount, string $type, string $payment_method, string $payment_code): void {
+		$this->db->query("INSERT INTO `" . DB_PREFIX . "subscription_transaction` SET `subscription_id` = '" . (int)$subscription_id . "', `order_id` = '" . (int)$order_id . "', `transaction_id` = '" . (int)$transaction_id . "', `description` = '" . $this->db->escape($description) . "', `amount` = '" . (float)$amount . "', `type` = '" . (int)$type . "', `payment_method` = '" . $this->db->escape($payment_method) . "', `payment_code` = '" . $this->db->escape($payment_code) . "', `date_added` = NOW()");
 	}
 }

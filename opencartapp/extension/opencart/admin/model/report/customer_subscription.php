@@ -56,8 +56,8 @@ class CustomerSubscription extends \Opencart\System\Engine\Model {
 			$sql .= " WHERE " . implode(" AND ", $implode);
 		}
 
-		$query = $this->db->query($sql);
+		$query = (int)$this->db->query($sql);
 
-		return (int)$query->row['total'];
+		return $query->row['total'];
 	}
 }

@@ -1,5 +1,6 @@
 <?php
 namespace Opencart\Admin\Controller\Common;
+use \Opencart\System\Helper as Helper;
 class Forgotten extends \Opencart\System\Engine\Controller {
 	public function index(): void {
 		$this->load->language('common/forgotten');
@@ -22,7 +23,7 @@ class Forgotten extends \Opencart\System\Engine\Controller {
 			'href' => $this->url->link('common/forgotten')
 		];
 
-		$data['confirm'] = $this->url->link('common/forgotten.confirm');
+		$data['confirm'] = $this->url->link('common/forgotten|confirm');
 		$data['back'] = $this->url->link('common/login');
 
 		$data['header'] = $this->load->controller('common/header');
@@ -58,7 +59,7 @@ class Forgotten extends \Opencart\System\Engine\Controller {
 		}
 
 		if (!$json) {
-			$this->model_user_user->editCode($this->request->post['email'], oc_token(40));
+			$this->model_user_user->editCode($this->request->post['email'], Helper\General\token(40));
 
 			$this->session->data['success'] = $this->language->get('text_success');
 
@@ -111,12 +112,12 @@ class Forgotten extends \Opencart\System\Engine\Controller {
 
 		$data['breadcrumbs'][] = [
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('common/forgotten.reset')
+			'href' => $this->url->link('common/forgotten|reset')
 		];
 
 		$this->session->data['reset_token'] = substr(bin2hex(openssl_random_pseudo_bytes(26)), 0, 26);
 
-		$data['reset'] = $this->url->link('common/forgotten.password', 'email=' . urlencode($email) . '&code=' . $code . '&reset_token=' . $this->session->data['reset_token']);
+		$data['reset'] = $this->url->link('common/forgotten|password', 'email=' . urlencode($email) . '&code=' . $code . '&reset_token=' . $this->session->data['reset_token']);
 		$data['back'] = $this->url->link('common/login');
 
 		$data['header'] = $this->load->controller('common/header');
@@ -172,7 +173,7 @@ class Forgotten extends \Opencart\System\Engine\Controller {
 		}
 
 		if (!$json) {
-			if ((oc_strlen(html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')) < 4) || (oc_strlen(html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')) > 40)) {
+			if ((Helper\Utf8\strlen(html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')) < 4) || (Helper\Utf8\strlen(html_entity_decode($this->request->post['password'], ENT_QUOTES, 'UTF-8')) > 40)) {
 				$json['error']['password'] = $this->language->get('error_password');
 			}
 

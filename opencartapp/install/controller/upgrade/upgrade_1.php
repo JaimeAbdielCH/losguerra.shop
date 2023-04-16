@@ -21,7 +21,47 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 		// Config and file structure changes
 		$file = DIR_OPENCART . 'config.php';
 
-		if (is_file($file)) {
+		if (!is_file($file)) {
+			$json['error'] = sprintf($this->language->get('error_file'), $file);
+		}
+
+		if (!is_writable($file)) {
+			$json['error'] =  sprintf($this->language->get('error_writable'), $file);
+		}
+
+		if (!$json) {
+			$capture = [
+				'APPLICATION',
+				'HOST_NAME',
+				'HTTP_SERVER',
+				'HTTPS_SERVER',
+				'HTTP_CATALOG',
+				'HTTPS_CATALOG',
+				'DIR_OPENCART',
+				'DIR_APPLICATION',
+				'DIR_EXTENSION',
+				'DIR_IMAGE',
+				'DIR_SYSTEM',
+				'DIR_CATALOG',
+				'DIR_STORAGE',
+				'DIR_LANGUAGE',
+				'DIR_TEMPLATE',
+				'DIR_CONFIG',
+				'DIR_CACHE',
+				'DIR_DOWNLOAD',
+				'DIR_LOGS',
+				'DIR_SESSION',
+				'DIR_UPLOAD',
+				'DB_DRIVER',
+				'DB_HOSTNAME',
+				'DB_USERNAME',
+				'DB_PASSWORD',
+				'DB_DATABASE',
+				'DB_PORT',
+				'DB_PREFIX',
+				'OPENCART_SERVER'
+			];
+
 			$config = [];
 
 			// Catalog
@@ -61,12 +101,6 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 			if (!defined('DB_PREFIX')) {
 				$json['error'] = $this->language->get('error_db_prefix');
 			}
-
-			if (!is_writable($file)) {
-				$json['error'] =  sprintf($this->language->get('error_writable'), $file);
-			}
-		} else {
-			$json['error'] = sprintf($this->language->get('error_file'), $file);
 		}
 
 		if (!$json) {
@@ -134,7 +168,15 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 		// Admin
 		$file = DIR_OPENCART . $admin . '/config.php';
 
-		if (is_file($file)) {
+		if (!is_file($file)) {
+			$json['error'] = sprintf($this->language->get('error_file'), $file);
+		}
+
+		if (!is_writable($file)) {
+			$json['error'] = sprintf($this->language->get('error_writable'), $file);
+		}
+
+		if (!$json) {
 			$config = [];
 
 			$lines = file($file);
@@ -148,10 +190,6 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 
 			if (!isset($config['HTTP_SERVER'])) {
 				$json['error'] = $this->language->get('error_server');
-			}
-
-			if (!isset($config['HTTP_CATALOG'])) {
-				$json['error'] = $this->language->get('error_catalog');
 			}
 
 			if (!defined('DB_DRIVER')) {
@@ -177,63 +215,9 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 			if (!defined('DB_PREFIX')) {
 				$json['error'] = $this->language->get('error_db_prefix');
 			}
-
-			if (!is_writable($file)) {
-				$json['error'] = sprintf($this->language->get('error_writable'), $file);
-			}
-		} else {
-			$json['error'] = sprintf($this->language->get('error_file'), $file);
 		}
 
 		if (!$json) {
-			$path_old = DIR_OPENCART . 'admin/';
-			$path_new = dirname($file) . '/';
-
-			// 1. Check if default admin directory exists
-			if (is_dir($path_old) && $path_old != $path_new) {
-				// 2. Move current config file to default admin directory.
-				rename($file, $path_old . 'config.php');
-
-				// 3. Remove the current directory
-				$files = [];
-
-				// Make path into an array
-				$directory = [$path_new];
-
-				// While the path array is still populated keep looping through
-				while (count($directory) != 0) {
-					$next = array_shift($directory);
-
-					if (is_dir($next)) {
-						foreach (glob(trim($next, '/') . '/{*,.[!.]*,..?*}', GLOB_BRACE) as $delete) {
-							// If directory add to path array
-							$directory[] = $delete;
-						}
-					}
-
-					// Add the file to the files to be deleted array
-					$files[] = $next;
-				}
-
-				// Reverse sort the file array
-				rsort($files);
-
-				foreach ($files as $delete) {
-					// If file just delete
-					if (is_file($delete)) {
-						unlink($delete);
-					}
-
-					// If directory use the remove directory function
-					if (is_dir($delete)) {
-						rmdir($delete);
-					}
-				}
-
-				// 4. Rename folder to the old directory
-				rename(DIR_OPENCART . 'admin/', $path_new);
-			}
-
 			// Admin config.php
 			$output  = '<?php' . "\n";
 			$output .= '// APPLICATION' . "\n";
@@ -309,88 +293,48 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 			'upload'
 		];
 
-		if (isset($config['DIR_STORAGE'])) {
-			$storage = $config['DIR_STORAGE'];
-		} else {
-			$storage = DIR_SYSTEM . 'storage/';
-		}
-
 		foreach ($directories as $directory) {
-			if (!is_dir($storage . $directory)) {
-				mkdir($storage . $directory, '0644');
+			if (!is_dir(DIR_STORAGE . $directory)) {
+				mkdir(DIR_STORAGE . $directory, '0644');
 
-				$handle = fopen($storage . $directory . '/index.html', 'w');
+				$handle = fopen(DIR_STORAGE . $directory . '/index.html', 'w');
 
 				fclose($handle);
 			}
 		}
 
-		// Move files from old directories to new ones.
-		$move = [
-			DIR_IMAGE . 'data/'      => DIR_IMAGE . 'catalog/', // Merge image/data to image/catalog
-			DIR_SYSTEM . 'upload/'   => $storage . 'upload/', // Merge system/upload to system/storage/upload
-			DIR_SYSTEM . 'download/' => $storage . 'download/' // Merge system/download to system/storage/download
-		];
+		// Merge system/upload to system/storage/upload
+		if (is_dir(DIR_SYSTEM . 'upload')) {
+			$this->recursive_move(DIR_SYSTEM . 'upload', DIR_STORAGE . 'upload');
+		}
 
-		foreach ($move as $source => $destination) {
-			$files = [];
+		// Merge image/data to image/catalog
+		if (is_dir(DIR_IMAGE . 'data')) {
+			if (!is_dir(DIR_IMAGE . 'catalog')) {
+				rename(DIR_IMAGE . 'data', DIR_IMAGE . 'catalog'); // Rename data to catalog
+			} else {
+				$this->recursive_move(DIR_IMAGE . 'data', DIR_IMAGE . 'catalog');
 
-			$directory = [$source];
-
-			while (count($directory) != 0) {
-				$next = array_shift($directory);
-
-				foreach (glob(rtrim($next, '/') . '/{*,.[!.]*,..?*}', GLOB_BRACE) as $file) {
-					// If directory add to path array
-					if (is_dir($file)) {
-						$directory[] = $file;
-					}
-
-					// Add the file to the files to be deleted array
-					$files[] = $file;
-				}
-			}
-
-			foreach ($files as $file) {
-				$path = substr($file, strlen($source));
-
-				if (is_dir($source . $path) && !is_dir($destination . $path)) {
-					mkdir($destination . $path, 0777);
-				}
-
-				if (is_file($source . $path) && !is_file($destination . $path)) {
-					copy($source . $path, $destination . $path);
-				}
-			}
-
-			// Start deleting old storage location files.
-			rsort($files);
-
-			foreach ($files as $file) {
-				// If file just delete
-				if (is_file($file)) {
-					unlink($file);
-				}
-
-				// If directory use the remove directory function
-				if (is_dir($file)) {
-					rmdir($file);
-				}
+				@unlink(DIR_IMAGE . 'data');
 			}
 		}
 
-		// Remove files in old directories
-		$remove = [
+		if (is_dir(DIR_SYSTEM . 'download')) {
+			$this->recursive_move(DIR_SYSTEM . 'download', DIR_STORAGE . 'download');
+		}
+
+		// Cleanup files in old directories
+		$directories = [
 			DIR_SYSTEM . 'logs/',
 			DIR_SYSTEM . 'cache/',
 		];
 
 		$files = [];
 
-		foreach ($remove as $directory) {
-			if (is_dir($directory)) {
+		foreach ($directories as $dir) {
+			if (is_dir($dir)) {
 				// Make path into an array
-				$path = [$directory . '*'];
+				$path = [$dir . '*'];
 
 				// While the path array is still populated keep looping through
 				while (count($path) != 0) {
@@ -411,15 +355,13 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 
 					// Clear all modification files
 					foreach ($files as $file) {
-						if ($file != $directory . 'index.html') {
+						if ($file != $dir . 'index.html') {
 							// If file just delete
 							if (is_file($file)) {
 								@unlink($file);
 
-							}
-
-							// If directory use the remove directory function
-							if (is_dir($file)) {
+								// If directory use the remove directory function
+							} elseif (is_dir($file)) {
 								@rmdir($file);
 							}
 						}
@@ -429,7 +371,7 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 		}
 
 		if (!$json) {
-			$json['text'] = sprintf($this->language->get('text_progress'), 1, 1, 9);
+			$json['text'] = sprintf($this->language->get('text_progress'), 1, 1, 8);
 
 			$url = '';
 
@@ -446,5 +388,34 @@ class Upgrade1 extends \Opencart\System\Engine\Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+	private function recursive_move($src, $dest) {
+		// If source is not a directory stop processing
+		if (!is_dir($src)) return false;
+
+		// If the destination directory does not exist create it
+		if (!is_dir($dest)) {
+			if (!@mkdir($dest)) {
+				// If the destination directory could not be created stop processing
+				return false;
+			}
+		}
+
+		// Open the source directory to read in files
+		$i = new \DirectoryIterator($src);
+
+		foreach ($i as $f) {
+			if ($f->isFile() && !file_exists("$dest/" . $f->getFilename())) {
+				@rename($f->getRealPath(), "$dest/" . $f->getFilename());
+			} elseif (!$f->isDot() && $f->isDir()) {
+				$this->recursive_move($f->getRealPath(), "$dest/$f");
+
+				@unlink($f->getRealPath());
+			}
+		}
+
+		// Remove source folder after move
+		@unlink($src);
 	}
 }
