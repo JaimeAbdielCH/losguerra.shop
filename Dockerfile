@@ -1,7 +1,7 @@
 FROM php:8.2.3-apache-bullseye
 ARG TIMEZONE
 
-COPY php.ini /usr/local/etc/php/conf.d/docker-php-config.ini
+COPY ./opencartapp/php.ini /usr/local/etc/php/conf.d/docker-php-config.ini
 
 RUN apt-get update && apt-get install -y \
     gnupg \
