@@ -25,13 +25,9 @@ function getURLVar(key) {
 $(document).ready(function () {
     // Tooltip
     var oc_tooltip = function () {
-        // Get tooltip instance
-        tooltip = bootstrap.Tooltip.getInstance(this);
-        if (!tooltip) {
-            // Apply to current element
-            tooltip = bootstrap.Tooltip.getOrCreateInstance(this);
-            tooltip.show();
-        }
+        // Apply to all on current page
+        tooltip = bootstrap.Tooltip.getOrCreateInstance(this);
+        tooltip.show();
     }
 
     $(document).on('mouseenter', '[data-bs-toggle=\'tooltip\']', oc_tooltip);
@@ -98,14 +94,13 @@ $(document).ready(function () {
     // Alert Fade
     var oc_alert = function () {
         window.setTimeout(function () {
-            $('.alert-dismissible').fadeTo(1000, 0, function () {
-                $(this).remove();
-            });
-        }, 3000);
+            //$('.alert-dismissible').fadeTo(1000, 0, function () {
+            //    $(this).remove();
+            //});
+        }, 7000);
     }
 
     $(document).on('click', 'button', oc_alert);
-    $(document).on('click', 'change', oc_alert);
 });
 
 $(document).ready(function () {
@@ -313,7 +308,7 @@ $(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function (e) {
                     $('#alert').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['error']['warning'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
                 }
 
-                for (var key in json['error']) {
+                for (key in json['error']) {
                     $('#input-' + key.replaceAll('_', '-')).addClass('is-invalid').find('.form-control, .form-select, .form-check-input, .form-check-label').addClass('is-invalid');
                     $('#error-' + key.replaceAll('_', '-')).html(json['error'][key]).addClass('d-block');
                 }
@@ -332,7 +327,7 @@ $(document).on('submit', 'form[data-oc-toggle=\'ajax\']', function (e) {
             }
 
             // Replace any form values that correspond to form names.
-            for (var key in json) {
+            for (key in json) {
                 $(form).find('[name=\'' + key + '\']').val(json[key]);
             }
         },
@@ -442,55 +437,36 @@ class Chain {
 var chain = new Chain();
 
 // Autocomplete
-+function ($) {
+(function ($) {
     $.fn.autocomplete = function (option) {
         return this.each(function () {
-            var element = this;
-            var $dropdown = $('#' + $(element).attr('data-oc-target'));
+            var $this = $(this);
+            var $dropdown = $('#' + $this.attr('list'));
 
             this.timer = null;
             this.items = [];
 
             $.extend(this, option);
 
-            // Focus in
-            $(element).on('focusin', function () {
-                element.request();
+            // Focus
+            $this.on('focus', function () {
+                this.request();
             });
 
-            // Focus out
-            $(element).on('focusout', function (e) {
-                if (!e.relatedTarget || !$(e.relatedTarget).hasClass('dropdown-item')) {
-                    $dropdown.removeClass('show');
-                }
-            });
+            // Keydown
+            $this.on('input', function (e) {
+                this.request();
 
-            // Input
-            $(element).on('input', function (e) {
-                element.request();
-            });
+                var value = $this.val();
 
-            // Click
-            $dropdown.on('click', 'a', function (e) {
-                e.preventDefault();
-
-                var value = $(this).attr('href');
-
-                if (element.items[value] !== undefined) {
-                    element.select(element.items[value]);
-
-                    $dropdown.removeClass('show');
+                if (value && this.items[value]) {
+                    this.select(this.items[value]);
                 }
             });
 
             // Request
             this.request = function () {
                 clearTimeout(this.timer);
-
-                $('#autocomplete-loading').remove();
-
-                $dropdown.prepend('<li id="autocomplete-loading"><span class="dropdown-item text-center disabled"><i class="fa-solid fa-circle-notch fa-spin"></i></span></li>');
-                $dropdown.addClass('show');
 
                 this.timer = setTimeout(function (object) {
                     object.source($(object).val(), $.proxy(object.response, object));
@@ -507,11 +483,11 @@ var chain = new Chain();
                 if (json.length) {
                     for (i = 0; i < json.length; i++) {
                         // update element items
-                        this.items[json[i]['value']] = json[i];
+                        this.items[json[i]['label']] = json[i];
 
                         if (!json[i]['category']) {
                             // ungrouped items
-                            html += '<li><a href="' + json[i]['value'] + '" class="dropdown-item">' + json[i]['label'] + '</a></li>';
+                            html += '<option>' + json[i]['label'] + '</option>';
                         } else {
                             // grouped items
                             name = json[i]['category'];
@@ -525,10 +501,8 @@ var chain = new Chain();
                     }
 
                     for (name in category) {
-                        html += '<li><h6 class="dropdown-header">' + name + '</h6></li>';
-
                         for (j = 0; j < category[name].length; j++) {
-                            html += '<li><a href="' + category[name][j]['value'] + '" class="dropdown-item">' + category[name][j]['label'] + '</a></li>';
+                            html += '<option value="' + category[name][j]['label'] + '">' + name + '</option>';
                         }
                     }
                 }
@@ -537,4 +511,4 @@ var chain = new Chain();
             }
         });
     }
-}(jQuery);
+})(window.jQuery);

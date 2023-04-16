@@ -35,9 +35,9 @@ class PaymentMethod extends \Opencart\System\Engine\Controller {
 			$data['success'] = '';
 		}
 
-		$data['list'] = $this->getList();
+		$data['back'] = $this->url->link('account/account', 'language=' . $this->config->get('config_language') . '&customer_token=' . $this->session->data['customer_token']);
 
-		$data['continue'] = $this->url->link('account/account', 'language=' . $this->config->get('config_language') . '&customer_token=' . $this->session->data['customer_token']);
+		$data['list'] = $this->getList();
 
 		$data['customer_token'] = $this->session->data['customer_token'];
 
@@ -79,7 +79,7 @@ class PaymentMethod extends \Opencart\System\Engine\Controller {
 				'image'               => $result['image'],
 				'type'                => $result['type'],
 				'date_expire'         => date('m-Y', strtotime($result['date_expire'])),
-				'delete'              => $this->url->link('account/payment_method.delete', 'language=' . $this->config->get('config_language') . '&customer_token=' . $this->session->data['customer_token'] . '&customer_payment_id=' . $result['customer_payment_id'])
+				'delete'              => $this->url->link('account/payment_method|delete', 'language=' . $this->config->get('config_language') . '&customer_token=' . $this->session->data['customer_token'] . '&customer_payment_id=' . $result['customer_payment_id'])
 			];
 		}
 
@@ -92,7 +92,7 @@ class PaymentMethod extends \Opencart\System\Engine\Controller {
 		$json = [];
 
 		if (isset($this->request->get['customer_payment_id'])) {
-			$customer_payment_id = (int)$this->request->get['customer_payment_id'];
+			$customer_payment_id = $this->request->get['customer_payment_id'];
 		} else {
 			$customer_payment_id = 0;
 		}
@@ -120,9 +120,10 @@ class PaymentMethod extends \Opencart\System\Engine\Controller {
 
 			}
 
-			// Delete payment method from database.
+			// Delete address from database.
 			$this->model_account_payment_method->deletePaymentMethod($customer_payment_id);
 
+			// Delete address from session.
 			$json['success'] = $this->language->get('text_success');
 		}
 

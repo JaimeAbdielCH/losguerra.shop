@@ -1,5 +1,6 @@
 <?php
 namespace Opencart\Catalog\Model\Checkout;
+use \Opencart\System\Helper as Helper;
 class Cart extends \Opencart\System\Engine\Model {
 	public function getProducts(): array {
 		$this->load->model('tool/image');
@@ -34,7 +35,7 @@ class Cart extends \Opencart\System\Engine\Model {
 
 				$option_data[] = [
 					'name'  => $option['name'],
-					'value' => (oc_strlen($value) > 20 ? oc_substr($value, 0, 20) . '..' : $value),
+					'value' => (Helper\Utf8\strlen($value) > 20 ? Helper\Utf8\substr($value, 0, 20) . '..' : $value),
 					'type'  => $option['type']
 				];
 			}
@@ -131,7 +132,7 @@ class Cart extends \Opencart\System\Engine\Model {
 			if ($this->config->get('total_' . $result['code'] . '_status')) {
 				$this->load->model('extension/' . $result['extension'] . '/total/' . $result['code']);
 
-				// __call magic method cannot pass-by-reference so we get PHP to call it as an anonymous function.
+				// __call can not pass-by-reference so we get PHP to call it as an anonymous function.
 				($this->{'model_extension_' . $result['extension'] . '_total_' . $result['code']}->getTotal)($totals, $taxes, $total);
 			}
 		}

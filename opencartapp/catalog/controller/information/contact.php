@@ -1,5 +1,6 @@
 <?php
 namespace Opencart\Catalog\Controller\Information;
+use \Opencart\System\Helper as Helper;
 class Contact extends \Opencart\System\Engine\Controller {
 	public function index(): void {
 		$this->load->language('information/contact');
@@ -18,7 +19,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 			'href' => $this->url->link('information/contact', 'language=' . $this->config->get('config_language'))
 		];
 
-		$data['send'] = $this->url->link('information/contact.send', 'language=' . $this->config->get('config_language'));
+		$data['send'] = $this->url->link('information/contact|send', 'language=' . $this->config->get('config_language'));
 
 		$this->load->model('tool/image');
 
@@ -34,7 +35,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 		$data['geocode_hl'] = $this->config->get('config_language');
 		$data['telephone'] = $this->config->get('config_telephone');
 		$data['open'] = nl2br($this->config->get('config_open'));
-		$data['comment'] = nl2br($this->config->get('config_comment'));
+		$data['comment'] = $this->config->get('config_comment');
 
 		$data['locations'] = [];
 
@@ -104,7 +105,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 			}
 		}
 
-		if ((oc_strlen($this->request->post['name']) < 3) || (oc_strlen($this->request->post['name']) > 32)) {
+		if ((Helper\Utf8\strlen($this->request->post['name']) < 3) || (Helper\Utf8\strlen($this->request->post['name']) > 32)) {
 			$json['error']['name'] = $this->language->get('error_name');
 		}
 
@@ -112,7 +113,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 			$json['error']['email'] = $this->language->get('error_email');
 		}
 
-		if ((oc_strlen($this->request->post['enquiry']) < 10) || (oc_strlen($this->request->post['enquiry']) > 3000)) {
+		if ((Helper\Utf8\strlen($this->request->post['enquiry']) < 10) || (Helper\Utf8\strlen($this->request->post['enquiry']) > 3000)) {
 			$json['error']['enquiry'] = $this->language->get('error_enquiry');
 		}
 
@@ -122,7 +123,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 		$extension_info = $this->model_setting_extension->getExtensionByCode('captcha', $this->config->get('config_captcha'));
 
 		if ($extension_info && $this->config->get('captcha_' . $this->config->get('config_captcha') . '_status') && in_array('contact', (array)$this->config->get('config_captcha_page'))) {
-			$captcha = $this->load->controller('extension/' . $extension_info['extension'] . '/captcha/' . $extension_info['code'] . '.validate');
+			$captcha = $this->load->controller('extension/' . $extension_info['extension'] . '/captcha/' . $extension_info['code'] . '|validate');
 
 			if ($captcha) {
 				$json['error']['captcha'] = $captcha;
@@ -131,16 +132,14 @@ class Contact extends \Opencart\System\Engine\Controller {
 
 		if (!$json) {
 			if ($this->config->get('config_mail_engine')) {
-				$mail_option = [
-					'parameter'     => $this->config->get('config_mail_parameter'),
-					'smtp_hostname' => $this->config->get('config_mail_smtp_hostname'),
-					'smtp_username' => $this->config->get('config_mail_smtp_username'),
-					'smtp_password' => html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8'),
-					'smtp_port'     => $this->config->get('config_mail_smtp_port'),
-					'smtp_timeout'  => $this->config->get('config_mail_smtp_timeout')
-				];
+				$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'));
+				$mail->parameter = $this->config->get('config_mail_parameter');
+				$mail->smtp_hostname = $this->config->get('config_mail_smtp_hostname');
+				$mail->smtp_username = $this->config->get('config_mail_smtp_username');
+				$mail->smtp_password = html_entity_decode($this->config->get('config_mail_smtp_password'), ENT_QUOTES, 'UTF-8');
+				$mail->smtp_port = $this->config->get('config_mail_smtp_port');
+				$mail->smtp_timeout = $this->config->get('config_mail_smtp_timeout');
 
-				$mail = new \Opencart\System\Library\Mail($this->config->get('config_mail_engine'), $mail_option);
 				$mail->setTo($this->config->get('config_email'));
 				// Less spam and fix bug when using SMTP like sendgrid.
 				$mail->setFrom($this->config->get('config_email'));
@@ -151,7 +150,7 @@ class Contact extends \Opencart\System\Engine\Controller {
 				$mail->send();
 			}
 
-			$json['redirect'] = $this->url->link('information/contact.success', 'language=' . $this->config->get('config_language'), true);
+			$json['redirect'] = $this->url->link('information/contact|success', 'language=' . $this->config->get('config_language'), true);
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

@@ -1,4 +1,0 @@
-2023-03-15 19:26:07 - ParseError:  Unclosed '{' on line 120 does not match ')'
-File: /opencartapp/admin/controller/common/security.php
-Line: 121
-

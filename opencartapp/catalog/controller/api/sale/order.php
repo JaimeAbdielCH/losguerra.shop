@@ -1,9 +1,10 @@
 <?php
 namespace Opencart\Catalog\Controller\Api\Sale;
+use \Opencart\System\Helper as Helper;
 class Order extends \Opencart\System\Engine\Controller {
 	/*
 	 * Loads order info
-	 */
+	 * */
 	public function load(): void {
 		$this->load->language('api/sale/order');
 
@@ -38,7 +39,7 @@ class Order extends \Opencart\System\Engine\Controller {
 			];
 
 			// Payment Details
-			if ($this->config->get('config_checkout_payment_address')) {
+			if ($this->config->get('config_checkout_address')) {
 				$this->session->data['payment_address'] = [
 					'firstname'      => $order_info['payment_firstname'],
 					'lastname'       => $order_info['payment_lastname'],
@@ -109,7 +110,7 @@ class Order extends \Opencart\System\Engine\Controller {
 					} elseif ($option['type'] == 'select' || $option['type'] == 'radio') {
 						$option_data[$option['product_option_id']] = $option['product_option_value_id'];
 					} elseif ($option['type'] == 'checkbox') {
-						$option_data[$option['product_option_id']][] = $option['product_option_value_id'];
+						$option_data[$option['product_option_id']][] = $option['value'];
 					}
 				}
 
@@ -210,7 +211,7 @@ class Order extends \Opencart\System\Engine\Controller {
 		}
 
 		// Payment Address
-		if ($this->config->get('config_checkout_payment_address') && !isset($this->session->data['payment_address'])) {
+		if ($this->config->get('config_checkout_address') && !isset($this->session->data['payment_address'])) {
 			$json['error']['payment_address'] = $this->language->get('error_payment_address');
 		}
 
@@ -238,14 +239,8 @@ class Order extends \Opencart\System\Engine\Controller {
 		}
 
 		// Payment Method
-		if (isset($this->session->data['payment_method']) && isset($this->session->data['payment_methods'])) {
-			$payment = explode('.', $this->session->data['payment_method']);
-
-			if (!isset($payment[0]) || !isset($payment[1]) || !isset($this->session->data['payment_methods'][$payment[0]]['option'][$payment[1]])) {
-				$json['error'] = $this->language->get('error_payment_method');
-			}
-		} else {
-			$json['error'] = $this->language->get('error_payment_method');
+		if (!isset($this->session->data['payment_method']) || !isset($this->session->data['payment_methods']) || !isset($this->session->data['payment_methods'][$this->session->data['payment_method']])) {
+			$json['error']['payment_method'] = $this->language->get('error_payment_method');
 		}
 
 		if (!$json) {
@@ -268,7 +263,7 @@ class Order extends \Opencart\System\Engine\Controller {
 			$order_data['custom_field'] = $this->session->data['customer']['custom_field'];
 
 			// Payment Details
-			if ($this->config->get('config_checkout_payment_address')) {
+			if ($this->config->get('config_checkout_address')) {
 				$order_data['payment_firstname'] = $this->session->data['payment_address']['firstname'];
 				$order_data['payment_lastname'] = $this->session->data['payment_address']['lastname'];
 				$order_data['payment_company'] = $this->session->data['payment_address']['company'];
@@ -392,7 +387,7 @@ class Order extends \Opencart\System\Engine\Controller {
 				foreach ($this->session->data['vouchers'] as $voucher) {
 					$order_data['vouchers'][] = [
 						'description'      => $voucher['description'],
-						'code'             => oc_token(10),
+						'code'             => Helper\General\token(10),
 						'to_name'          => $voucher['to_name'],
 						'to_email'         => $voucher['to_email'],
 						'from_name'        => $voucher['from_name'],

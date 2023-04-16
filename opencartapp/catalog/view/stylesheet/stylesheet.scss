@@ -84,7 +84,6 @@ div.required .col-form-label:before, div.required .form-label:before {
 
 #alert {
   z-index: 9999;
-  pointer-events: all;
 }
 
 #alert .alert {
@@ -240,16 +239,14 @@ footer a {
 #header-cart {
   margin-bottom: 10px;
 
-  // > .btn {
-  //   font-size: 12px;
-  //   line-height: 18px;
-  // }
+  > .btn {
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFF;
+  }
 
   .btn-lg {
-    // padding: 0.65rem 1rem;
-    color: #FFF;
-    height: 40px;
-    padding: 0 1rem;
+    padding: 0.65rem 1rem;
   }
 
   .btn:hover {

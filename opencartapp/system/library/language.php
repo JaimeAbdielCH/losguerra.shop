@@ -2,7 +2,7 @@
 /**
  * @package		OpenCart
  * @author		Daniel Kerr
- * @copyright	Copyright (c) 2005 - 2022, OpenCart, Ltd. (https://www.opencart.com/)
+ * @copyright	Copyright (c) 2005 - 2017, OpenCart, Ltd. (https://www.opencart.com/)
  * @license		https://opensource.org/licenses/GPL-3.0
  * @link		https://www.opencart.com
 */
@@ -21,7 +21,7 @@ class Language {
 	/**
 	 * Constructor
 	 *
-	 * @param    string  $code
+	 * @param    string $code
 	 *
 	 */
 	public function __construct(string $code) {
@@ -31,10 +31,8 @@ class Language {
 	/**
 	 * addPath
 	 *
-	 * @param    string  $namespace
-	 * @param    string  $directory
-	 *
-	 * @return   void
+	 * @param    string $namespace
+	 * @param    string $directory
 	 */
 	public function addPath(string $namespace, string $directory = ''): void {
 		if (!$directory) {
@@ -45,7 +43,7 @@ class Language {
 	}
 
 	/**
-     * Get language text string
+     * Get language tex string
      *
      * @param	string	$key
 	 * 
@@ -91,7 +89,7 @@ class Language {
 	/**
 	 * Clear
 	 *
-	 * @return	void
+	 * @return	array
 	 */
 	public function clear(): void {
 		$this->data = [];
@@ -111,9 +109,6 @@ class Language {
 		}
 
 		if (!isset($this->cache[$code][$filename])) {
-			$_ = [];
-
-			// Load selected language file to overwrite the default language keys
 			$file = $this->directory . $code . '/' . $filename . '.php';
 
 			$namespace = '';
@@ -131,6 +126,8 @@ class Language {
 					$file = $this->path[$namespace] . $code . substr($filename, strlen($namespace)) . '.php';
 				}
 			}
+
+			$_ = [];
 
 			if (is_file($file)) {
 				require($file);

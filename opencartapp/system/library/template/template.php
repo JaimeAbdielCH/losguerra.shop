@@ -7,10 +7,8 @@ class Template {
 	/**
 	 * addPath
 	 *
-	 * @param    string  $namespace
-	 * @param    string  $directory
-	 *
-	 * @return	 void
+	 * @param    string $namespace
+	 * @param    string $directory
 	 */
 	public function addPath(string $namespace, string $directory = ''): void {
 		if (!$directory) {
@@ -27,7 +25,7 @@ class Template {
 	 * @param	array	$data
 	 * @param	string	$code
 	 *
-	 * @return	string
+	 * @return	array
 	 */
 	public function render(string $filename, array $data = [], string $code = ''): string {
 		if (!$code) {
@@ -69,14 +67,6 @@ class Template {
 		}
 	}
 
-	/**
-	 * Compile
-	 *
-	 * @param	string	$filename
-	 * @param	string	$code
-	 *
-	 * @return	string
-	 */
 	protected function compile(string $filename, string $code): string {
 		$file = DIR_CACHE . 'template/' . hash('md5', $filename . $code) . '.php';
 

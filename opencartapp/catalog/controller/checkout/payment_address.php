@@ -1,5 +1,6 @@
 <?php
 namespace Opencart\Catalog\Controller\Checkout;
+use \Opencart\System\Helper as Helper;
 class PaymentAddress extends \Opencart\System\Engine\Controller {
 	public function index(): string {
 		$this->load->language('checkout/payment_address');
@@ -10,6 +11,7 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 
 		$data['upload'] = $this->url->link('tool/upload', 'language=' . $this->config->get('config_language'));
 
+		$data['language'] = $this->config->get('config_language');
 		$data['shipping_required'] = $this->cart->hasShipping();
 
 		// Set payment address
@@ -48,8 +50,6 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 			}
 		}
 
-		$data['language'] = $this->config->get('config_language');
-
 		return $this->load->view('checkout/payment_address', $data);
 	}
 
@@ -80,7 +80,7 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 		}
 
 		// Validate if payment address is set if required in settings
-		if (!$this->config->get('config_checkout_payment_address')) {
+		if (!$this->config->get('config_checkout_address')) {
 			$json['redirect'] = $this->url->link('checkout/cart', 'language=' . $this->config->get('config_language'), true);
 		}
 
@@ -104,19 +104,19 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 				}
 			}
 
-			if ((oc_strlen($this->request->post['firstname']) < 1) || (oc_strlen($this->request->post['firstname']) > 32)) {
+			if ((Helper\Utf8\strlen($this->request->post['firstname']) < 1) || (Helper\Utf8\strlen($this->request->post['firstname']) > 32)) {
 				$json['error']['payment_firstname'] = $this->language->get('error_firstname');
 			}
 
-			if ((oc_strlen($this->request->post['lastname']) < 1) || (oc_strlen($this->request->post['lastname']) > 32)) {
+			if ((Helper\Utf8\strlen($this->request->post['lastname']) < 1) || (Helper\Utf8\strlen($this->request->post['lastname']) > 32)) {
 				$json['error']['payment_lastname'] = $this->language->get('error_lastname');
 			}
 
-			if ((oc_strlen($this->request->post['address_1']) < 3) || (oc_strlen($this->request->post['address_1']) > 128)) {
+			if ((Helper\Utf8\strlen($this->request->post['address_1']) < 3) || (Helper\Utf8\strlen($this->request->post['address_1']) > 128)) {
 				$json['error']['payment_address_1'] = $this->language->get('error_address_1');
 			}
 
-			if ((oc_strlen($this->request->post['city']) < 2) || (oc_strlen($this->request->post['city']) > 32)) {
+			if ((Helper\Utf8\strlen($this->request->post['city']) < 2) || (Helper\Utf8\strlen($this->request->post['city']) > 32)) {
 				$json['error']['payment_city'] = $this->language->get('error_city');
 			}
 
@@ -124,7 +124,7 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 
 			$country_info = $this->model_localisation_country->getCountry((int)$this->request->post['country_id']);
 
-			if ($country_info && $country_info['postcode_required'] && (oc_strlen($this->request->post['postcode']) < 2 || oc_strlen($this->request->post['postcode']) > 10)) {
+			if ($country_info && $country_info['postcode_required'] && (Helper\Utf8\strlen($this->request->post['postcode']) < 2 || Helper\Utf8\strlen($this->request->post['postcode']) > 10)) {
 				$json['error']['payment_postcode'] = $this->language->get('error_postcode');
 			}
 
@@ -212,9 +212,6 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 
 			$json['success'] = $this->language->get('text_success');
 
-			unset($this->session->data['shipping_method']);
-			unset($this->session->data['shipping_methods']);
-			unset($this->session->data['payment_method']);
 			unset($this->session->data['payment_methods']);
 		}
 
@@ -259,7 +256,7 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 		}
 
 		// Validate if payment address is set if required in settings
-		if (!$this->config->get('config_checkout_payment_address')) {
+		if (!$this->config->get('config_checkout_address')) {
 			$json['redirect'] = $this->url->link('checkout/cart', 'language=' . $this->config->get('config_language'), true);
 		}
 
@@ -278,9 +275,6 @@ class PaymentAddress extends \Opencart\System\Engine\Controller {
 
 			$json['success'] = $this->language->get('text_success');
 
-			unset($this->session->data['shipping_method']);
-			unset($this->session->data['shipping_methods']);
-			unset($this->session->data['payment_method']);
 			unset($this->session->data['payment_methods']);
 		}
 
