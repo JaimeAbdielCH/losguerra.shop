@@ -1,4 +1,4 @@
-FROM php:8.2.3-apache-bullseye
+FROM php:8.1.17-apache-bullseye
 ARG TIMEZONE
 
 COPY ./opencartapp/php.ini /usr/local/etc/php/conf.d/docker-php-config.ini
